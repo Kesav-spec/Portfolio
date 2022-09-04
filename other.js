@@ -54,3 +54,14 @@ var splide3 = new Splide(".splide3", {
 	perPage: 1
 });
 splide3.mount();
+
+var splide4 = new Splide(".splide4", {
+	speed: 1000,
+	pagination: false,
+	type: 'loop',
+	drag: false,
+	autoplay: true,
+	interval: 3000,
+	perPage: 1
+});
+splide4.mount();
