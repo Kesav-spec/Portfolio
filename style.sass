@@ -253,6 +253,17 @@ $shadows-big: multiple-box-shadow(100)
                         color: #000
                         background: #fff
 
+                    &--disabled
+                        text-decoration: none
+                        text-transform: uppercase
+                        font-size: .85em
+                        color: #aaa
+                        font-weight: 700
+                        border: 1px solid #aaa
+                        padding: .75em
+                        border-radius: 5px
+                        cursor: default
+
             &__description
                 margin-top: 1.5em
                 color: #fff
@@ -500,7 +511,7 @@ $shadows-big: multiple-box-shadow(100)
     .projects .project
         display: flex
         flex-direction: column
-        height: 52rem
+        height: 56rem
 
     .projects .project__info
         padding-bottom: 5rem
@@ -517,7 +528,7 @@ $shadows-big: multiple-box-shadow(100)
     .projects .project
         display: flex
         flex-direction: column
-        height: 48rem
+        height: 52rem
 
 @media screen and (min-width: 131rem)
     html
@@ -533,7 +544,6 @@ $shadows-big: multiple-box-shadow(100)
 
         &__name
             width: 13ch
-
 
     .projects .project__info__contributions__item
         margin-top: .5em
