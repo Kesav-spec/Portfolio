@@ -1,5 +1,5 @@
 const form = document.querySelector(".contact__form");
-const submitBtn = document.querySelector(".contact__form__submit")
+const submitBtn = document.querySelector(".contact__form__submit");
 
 const showMessage = (msg) => {
 	const messageContainer = document.querySelector(".contact__message");
@@ -16,10 +16,16 @@ const validate = (name) => {
 	if (!element.value) {
 		element.style.borderBottom = "1px solid #ff5454";
 		element.nextElementSibling.style.color = "#ff5454";
+		const warning = element.parentNode.querySelector(".contact__form__input__warning");
+		warning.style.visibility = "visible";
+		warning.textContent = `Please enter your ${name}.`;
 		return false;
 	} else {
 		element.style.borderBottom = "1px solid #888";
 		element.nextElementSibling.style.color = "#fff";
+		const warning = element.parentNode.querySelector(".contact__form__input__warning");
+		warning.style.visibility = "hidden";
+		warning.textContent = "";
 		return true;
 	}
 };
@@ -43,10 +49,16 @@ submitBtn.addEventListener("click", (e) => {
 		});
 });
 
+setTimeout(() => {
+	document.querySelector(".scroll").style.opacity = 100;
+	document.querySelector(".scroll__message-wrap").style.opacity = 100;
+}, 2500);
+
 window.addEventListener(
 	"scroll",
 	() => {
 		document.querySelector(".scroll").style.opacity = 0;
+		document.querySelector(".scroll__message-wrap").style.opacity = 0;
 	},
 	{ once: true }
 );
@@ -65,5 +77,6 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(document.querySelector(".skills"));
 observer.observe(document.querySelector(".projects"));
+observer.observe(document.querySelector(".certification"));
 observer.observe(document.querySelector(".journey"));
 observer.observe(document.querySelector(".contact"));

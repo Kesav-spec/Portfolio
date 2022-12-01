@@ -65,3 +65,15 @@ var splide4 = new Splide(".splide4", {
 	perPage: 1
 });
 splide4.mount();
+
+var splide5 = new Splide(".splide5", {
+	speed: 1000,
+	pagination: false,
+	type: 'loop',
+	drag: false,
+	autoplay: true,
+	interval: 3000,
+	perPage: 1
+});
+splide5.mount();
+

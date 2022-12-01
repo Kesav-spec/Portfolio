@@ -1,553 +1,668 @@
 @function multiple-box-shadow ($n)
-    $value: '#{random(3000)}px #{random(3000)}px #FFF'
-    @for $i from 2 through $n
-        $value: '#{$value} , #{random(3000)}px #{random(3000)}px #FFF'
-    @return unquote($value)
+	$value: '#{random(3000)}px #{random(3000)}px #FFF'
+	@for $i from 2 through $n
+		$value: '#{$value} , #{random(3000)}px #{random(3000)}px #FFF'
+	@return unquote($value)
 
 $shadows-small: multiple-box-shadow(700)
 $shadows-medium: multiple-box-shadow(200)
 $shadows-big: multiple-box-shadow(100)
 
 *
-    padding: 0
-    margin: 0
-    box-sizing: border-box
-    font-family: 'Overpass', sans-serif
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	font-family: 'Overpass', sans-serif
+
+html
+	background: #090A0F
 
 .container
-    height: 100%
-    background: #090A0F
+	height: 100%
+	background: #090A0F
 
 #smolsnow
-    width: 1px
-    height: 1px
-    background: transparent
-    box-shadow: $shadows-small
-    animation: snow 120s linear infinite
+	width: 1px
+	height: 1px
+	background: transparent
+	box-shadow: $shadows-small
+	animation: snow 120s linear infinite
 
-    &:after
-        content: " "
-        position: absolute
-        top: 2000px
-        width: 1px
-        height: 1px
-        background: transparent
-        box-shadow: $shadows-small
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 1px
+		height: 1px
+		background: transparent
+		box-shadow: $shadows-small
 
 #midsnow
-    width: 2px
-    height: 2px
-    background: transparent
-    box-shadow: $shadows-medium
-    animation: snow 200s linear infinite
+	width: 2px
+	height: 2px
+	background: transparent
+	box-shadow: $shadows-medium
+	animation: snow 200s linear infinite
 
-    &:after
-        content: " "
-        position: absolute
-        top: 2000px
-        width: 2px
-        height: 2px
-        background: transparent
-        box-shadow: $shadows-medium
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 2px
+		height: 2px
+		background: transparent
+		box-shadow: $shadows-medium
 
 #bigsnow
-    width: 3px
-    height: 3px
-    background: transparent
-    box-shadow: $shadows-big
-    animation: snow 300s linear infinite
+	width: 3px
+	height: 3px
+	background: transparent
+	box-shadow: $shadows-big
+	animation: snow 300s linear infinite
 
-    &:after
-        content: " "
-        position: absolute
-        top: 2000px
-        width: 3px
-        height: 3px
-        background: transparent
-        box-shadow: $shadows-big
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 3px
+		height: 3px
+		background: transparent
+		box-shadow: $shadows-big
+
 
 .scroll
-    position: absolute
-    bottom: 8rem
-    transition: opacity 1s
-
+	position: absolute
+	bottom: 8rem
+	transition: opacity .75s
+	color: #fff
+	opacity: 0
+	
 .scroll span
-    width: 20px
-    height: 20px
-    display: block
-    border-right: 2px solid #fff
-    border-bottom: 2px solid #fff
-    transform: rotate(45deg)
-    margin: -10px
-    animation: scroll 2s infinite
+	width: 20px
+	height: 20px
+	display: block
+	border-right: 2px solid #fff
+	border-bottom: 2px solid #fff
+	transform: rotate(45deg)
+	margin: -10px
+	animation: scroll 2s infinite
 
-    &:nth-child(2)
-        animation-delay: -0.2s
+	&:nth-child(2)
+		animation-delay: -0.2s
 
-    &:nth-child(3)
-        animation-delay: -0.4s
+	&:nth-child(3)
+		animation-delay: -0.4s
+
+.scroll__message-wrap
+	transition: opacity .75s
+	opacity: 0
+
+.scroll__message
+	color: #ECECEC
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 3rem
+	text-align: center
+	display: block
+	text-transform: uppercase
+	overflow: hidden
+	letter-spacing: .1rem
+	font-weight: 400
+	font-size: .75rem
+	animation: scroll-message 2s infinite
+
 
 .hero
-    min-height: 100vh
-    display: grid
-    place-items: center
+	min-height: 100vh
+	display: grid
+	place-items: center
 
-    &__content-wrap
-        display: flex
-        flex-direction: column
-        align-items: center
-        gap: .5rem
+	&__content-wrap
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: .5rem
 
-    &__title-wrap
-        color: #FFF
-        font-weight: 400
-        font-size: 3rem
-        letter-spacing: 10px
-        min-width: 27rem
+	&__title-wrap
+		color: #FFF
+		font-weight: 400
+		font-size: 3rem
+		letter-spacing: 10px
+		min-width: 27rem
 
-    &__name
-        color: #ECECEC
-        display: block
-        text-transform: uppercase
-        width: 27rem
-        animation: typing 2s linear, blink .5s step-end infinite alternate
-        white-space: nowrap
-        overflow: hidden
-        border-right: 3px solid
-        font-size: 1em
+	&__name
+		color: #ECECEC
+		display: block
+		text-transform: uppercase
+		width: 27rem
+		animation: typing 2s linear, blink .5s step-end infinite alternate
+		white-space: nowrap
+		overflow: hidden
+		border-right: 3px solid
+		font-size: 1em
 
-    &__subtext
-        display: block
-        text-transform: uppercase
-        width: 100%
-        text-align: center
-        color: #ECECEC
-        letter-spacing: .35rem
-        font-weight: 400
-        font-size: 1.15rem
-        opacity: 0
-        animation: show .5s 2s ease-in-out forwards
+	&__subtext
+		display: block
+		text-transform: uppercase
+		width: 100%
+		text-align: center
+		color: #ECECEC
+		letter-spacing: .35rem
+		font-weight: 400
+		font-size: 1.15rem
+		opacity: 0
+		animation: show .5s 2s ease-in-out forwards
 
-    &__links
-        display: flex
-        justify-content: space-evenly
-        margin-top: 3rem
-        width: 100%
-        opacity: 0
-        animation: show .5s 2.5s ease-in-out forwards
+	&__links
+		display: flex
+		justify-content: space-evenly
+		margin-top: 3rem
+		width: 100%
+		opacity: 0
+		animation: show .5s 2.5s ease-in-out forwards
 
-        &__item
-            text-decoration: none
-            color: #d5d5d5
+		&__item
+			text-decoration: none
+			color: #d5d5d5
 
-.skills, .projects, .journey, .contact
-    margin-top: 10rem
-    display: flex
-    flex-direction: column
-    align-items: center
-    color: #ECECEC
 
-    &__heading
-        display: block
-        text-transform: uppercase
-        width: 80%
-        text-align: center
-        font-size: 2.5rem
-        letter-spacing: .35rem
-        font-weight: 400
-        padding-bottom: 1rem
-        border-bottom: 1px solid #fff
+.skills, .projects, .journey, .certification, .contact
+	margin-top: 10rem
+	display: flex
+	flex-direction: column
+	align-items: center
+	color: #ECECEC
 
-    &__content-wrap
-        width: 80%
-        margin-top: 3rem
+	&__heading
+		display: block
+		text-transform: uppercase
+		width: 80%
+		text-align: center
+		font-size: 2.5rem
+		letter-spacing: .35rem
+		font-weight: 400
+		padding-bottom: 1rem
+		border-bottom: 1px solid #fff
+
+	&__content-wrap
+		width: 80%
+		margin-top: 3rem
+
 
 .skills
-    margin-top: 0
+	margin-top: 2.5rem
 
-    &__content-wrap
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(17rem, min-content))
-        column-gap: 2rem
-        row-gap: 3rem
-        padding-top: 2rem
-        margin-top: 3rem
-        justify-content: center
+	&__content-wrap
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(17rem, min-content))
+		column-gap: 2rem
+		row-gap: 3rem
+		padding-top: 2rem
+		margin-top: 3rem
+		justify-content: center
 
-    &__group__subheading
-        display: block
-        text-transform: uppercase
-        font-size: 1.35rem
-        letter-spacing: .15rem
-        font-weight: 700
-        margin-bottom: 1.5rem
+	&__group__subheading
+		display: block
+		text-transform: uppercase
+		font-size: 1.35rem
+		letter-spacing: .15rem
+		font-weight: 700
+		margin-bottom: 1.5rem
 
-    &__group__item
-        display: flex
-        align-items: center
-        gap: 1rem
-        font-size: 2.5rem
-        margin: 1rem 0
+	&__group__item
+		display: flex
+		align-items: center
+		gap: 1rem
+		font-size: 2.5rem
+		margin: 1rem
 
-        p
-            font-size: 1.1rem
+		&__icon
+			overflow: hidden
+			height: min-content
+			flex-shrink: 0
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			img
+				display: block
+				width: 40px
+				object-fit: contain
+
+		p
+			font-size: 1.1rem
+			line-height: 1rem
+
 
 .projects
+	.project
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: 2em
+		margin-bottom: 5rem
+		padding-left: .25rem
 
-    .project
-        height: 60vh
-        display: grid
-        grid-template-columns: repeat(2, 1fr)
-        gap: 2em
+		&__img
+			overflow: hidden
+			height: min-content
+			border: 1px solid #fff
+			border-radius: 10px
+			flex-shrink: 0
 
-        &__img
-            overflow: hidden
-            height: min-content
-            border: 1px solid #fff
-            border-radius: 10px
-            flex-shrink: 0
+			img
+				display: block
+				height: 100%
+				width: 100%
+				object-fit: contain
 
-            img
-                display: block
-                height: 100%
-                width: 100%
-                object-fit: contain
+		&__info
+			display: flex
+			flex-direction: column
 
-        &__info
-            display: flex
-            flex-direction: column
+			&__role
+				text-transform: uppercase
+				color: #aaa
+				font-weight: 700
+				font-size: .75em
 
-            &__role
-                text-transform: uppercase
-                color: #aaa
-                font-weight: 700
-                font-size: .75em
+			&__title
+				text-transform: uppercase
+				font-size: 2em
 
-            &__title
-                text-transform: uppercase
-                font-size: 2em
+			&__tech
+				text-transform: uppercase
+				font-size: .85em
+				font-weight: 700
+				margin-top: .5em
 
-            &__tech
-                text-transform: uppercase
-                font-size: .85em
-                font-weight: 700
-                margin-top: .5em
+			&__links
+				display: flex
+				gap: 1em
+				margin-top: 1em
 
-            &__links
-                display: flex
-                gap: 1em
-                margin-top: 1em
+				&__item
+					text-decoration: none
+					text-transform: uppercase
+					font-size: .85em
+					color: #fff
+					font-weight: 700
+					border: 1px solid #fff
+					padding: .75em
+					border-radius: 5px
+					transition: .3s
 
-                &__item
-                    text-decoration: none
-                    text-transform: uppercase
-                    font-size: .85em
-                    color: #fff
-                    font-weight: 700
-                    border: 1px solid #fff
-                    padding: .75em
-                    border-radius: 5px
-                    transition: .3s
+					&:hover
+						color: #000
+						background: #fff
 
-                    &:hover
-                        color: #000
-                        background: #fff
+					&--disabled
+						text-decoration: none
+						text-transform: uppercase
+						font-size: .85em
+						color: #aaa
+						font-weight: 700
+						border: 1px solid #aaa
+						padding: .75em
+						border-radius: 5px
+						pointer-events: none
 
-                    &--disabled
-                        text-decoration: none
-                        text-transform: uppercase
-                        font-size: .85em
-                        color: #aaa
-                        font-weight: 700
-                        border: 1px solid #aaa
-                        padding: .75em
-                        border-radius: 5px
-                        cursor: default
+			&__description
+				margin-top: 1.5em
+				color: #fff
 
-            &__description
-                margin-top: 1.5em
-                color: #fff
+			&__contributions
+				margin-top: 1.5em
+				display: flex
+				flex-direction: column
+				gap: .5rem
 
-            &__contributions
-                margin-top: 1.5em
+				&__item
+					display: flex
+					align-items: top
 
-                &__item
-                    display: flex
-                    align-items: center
+					span
+						font-size: 1.25rem
+						margin-right: 1rem
 
-                    svg
-                        flex-shrink: 0
 
 .journey
+	&__content-wrap
+		display: flex
+		flex-direction: column
+		gap: 3rem
+		position: relative
+		border-left: 1px solid #aaa
 
-    &__content-wrap
-        display: flex
-        flex-direction: column
-        gap: 3rem
-        position: relative
-        border-left: 1px solid #aaa
+	&__item
+		display: flex
+		position: relative
 
-    &__item
-        display: flex
-        position: relative
+		svg
+			position: absolute
+			width: .75rem
+			height: .75rem
+			fill: #aaa
+			stroke: #aaa
+			margin-left: -.4rem
+			margin-top: -.5rem
 
-        svg
-            position: absolute
-            width: .75rem
-            height: .75rem
-            fill: #aaa
-            stroke: #aaa
-            margin-left: -.4rem
-            margin-top: -.5rem
+		&__text
+			margin-top: -1.05rem
+			margin-left: 1rem
+			line-height: 1.75rem
 
-        &__text
-            margin-top: -1.05rem
-            margin-left: 1rem
-            line-height: 1.75rem
+			&__duration
+				text-transform: uppercase
+				color: #aaa
+				font-weight: 700
+				font-size: .85rem
 
-            &__duration
-                text-transform: uppercase
-                color: #aaa
-                font-weight: 700
-                font-size: .85rem
+			&__title
+				text-transform: uppercase
+				font-size: 1.5rem
 
-            &__title
-                text-transform: uppercase
-                font-size: 1.5rem
+			&__subtitle
+				text-transform: uppercase
+				font-size: .85rem
+				font-weight: 700
 
-            &__subtitle
-                text-transform: uppercase
-                font-size: .85rem
-                font-weight: 700
+			&__achievements
+				margin-top: .5rem
+				margin-left: 2rem
+				a
+					font-weight: 700
+					text-decoration: none
+					color: #fff
+					text-transform: uppercase
 
-            &__achievements
-                margin-top: .5rem
-                margin-left: 2rem
-                a
-                    font-weight: 700
-                    text-decoration: none
-                    color: #fff
-                    text-transform: uppercase
+
+.certification
+	&__content-wrap
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(17rem, min-content))
+		column-gap: 2rem
+		row-gap: 4rem
+		padding-top: 2rem
+		margin-top: 3rem
+		justify-content: center
+
+	&__card
+		display: flex
+		flex-direction: column
+		gap: 1rem
+		color: #fff
+		text-decoration: none
+
+		&__img
+			overflow: hidden
+			height: min-content
+			flex-shrink: 0
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			img
+				display: block
+				width: 75%
+				object-fit: contain
+
+		&__info
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			&__name
+				text-transform: uppercase
+				font-size: 1.15rem
+				letter-spacing: .15rem
+				font-weight: 600
+				text-align: center
+				margin-top: .25rem
+
+			&__date
+				text-transform: uppercase
+				font-size: .75rem
+				color: #bbb
+
 
 .contact
+	&__content-wrap
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-top: 1rem
 
-    &__content-wrap
-        display: flex
-        flex-direction: column
-        align-items: center
-        margin-top: 1rem
+	&__message-wrap
+		display: flex
+		justify-content: center
 
-    &__message-wrap
-        display: flex
-        justify-content: center
+	&__message
+		text-transform: uppercase
+		font-weight: 700
+		background: #fff
+		color: #000
+		border-radius: 6px
+		padding: 1rem
+		width: 100%
+		text-align: center
+		opacity: 0
+		transition: opacity 1s
 
-    &__message
-        text-transform: uppercase
-        font-weight: 700
-        background: #fff
-        color: #000
-        border-radius: 6px
-        padding: 1rem
-        width: 100%
-        text-align: center
-        opacity: 0
-        transition: opacity 1s
+	&__form
+		display: flex
+		flex-direction: column
+		gap: 1rem
+		width: 75%
 
-    &__form
-        display: flex
-        flex-direction: column
-        gap: 1rem
-        width: 75%
+		&__address-wrap
+			display: grid
+			grid-template-columns: 1fr 1fr
+			gap: 2rem
 
-        &__address-wrap
-            display: grid
-            grid-template-columns: 1fr 1fr
-            gap: 2rem
+		&__input
+			display: flex
+			flex-direction: column-reverse
+			position: relative
+			padding-top: 1.5rem
+			margin-top: 1.5rem
 
-        &__input
-            display: flex
-            flex-direction: column-reverse
-            position: relative
-            padding-top: 1.5rem
-            margin-top: 1.5rem
+			&__label
+				color: #aaa
+				text-transform: uppercase
+				position: absolute
+				font-weight: 700
+				top: 1.5rem
+				transition: .25s ease
 
-            &__label
-                color: #aaa
-                text-transform: uppercase
-                position: absolute
-                font-weight: 700
-                top: 1.5rem
-                transition: .25s ease
+			&__field
+				border: 0
+				z-index: 1
+				background-color: transparent
+				border-bottom: 1px solid #888
+				color: #aaa
+				font: inherit
+				font-size: 1rem
+				padding: .25rem 0
 
-            &__field
-                border: 0
-                z-index: 1
-                background-color: transparent
-                border-bottom: 1px solid #888
-                color: #aaa
-                font: inherit
-                font-size: 1rem
-                padding: .25rem 0
+				&:focus, &:valid
+					outline: 0
+					border-bottom-color: #fff
 
-                &:focus, &:valid
-                    outline: 0
-                    border-bottom-color: #fff
+					&+.contact__form__input__label
+						color: #fff
+						transform: translateY(-1.5rem)
+			
+			&__warning
+				position: absolute
+				top: 3.75rem
+				visibility: hidden
+				text-transform: none
+				font-size: 0.85rem
+				margin-top: .25rem
+				color: #ff8080
 
-                    &+.contact__form__input__label
-                        color: #fff
-                        transform: translateY(-1.5rem)
+		textarea
+			resize: none
 
-        textarea
-            resize: none
+		&__submit-wrap
+			margin: 2rem 0
+			text-align: end
 
-        &__submit-wrap
-            margin: 2rem 0
-            text-align: end
+		&__submit
+			text-decoration: none
+			text-transform: uppercase
+			background: #ffffff00
+			font-size: 1.25rem
+			color: #fff
+			font-weight: 700
+			border: 1px solid #fff
+			padding: 1rem 3rem
+			border-radius: 5px
+			transition: .3s
 
-        &__submit
-            text-decoration: none
-            text-transform: uppercase
-            background: #ffffff00
-            font-size: 1.25rem
-            color: #fff
-            font-weight: 700
-            border: 1px solid #fff
-            padding: 1rem 3rem
-            border-radius: 5px
-            transition: .3s
+			&:hover
+				color: #000
+				background: #fff
 
-            &:hover
-                color: #000
-                background: #fff
 
 *::-webkit-scrollbar
-    width: 0.4em
+	width: 0.4em
 
 *::-webkit-scrollbar-track
-    background: #090A0F
+	background: #090A0F
 
 *::-webkit-scrollbar-thumb
-    background: #555
-    border-radius: 0rem
+	background: #555
+	border-radius: 0rem
+
 
 .tippy-box[data-theme~='clean']
-    background-color: #ffffff00
-    color: #fff
-    text-transform: uppercase
+	background-color: #ffffff00
+	color: #fff
+	text-transform: uppercase
 
-    letter-spacing: .1rem
-    font-weight: 400
-    font-size: .75rem
+	letter-spacing: .1rem
+	font-weight: 400
+	font-size: .75rem
 
 .splide
-    overflow-y: hidden
+	overflow-y: hidden
 
-    .splide__arrow svg
-        fill: none
-        height: 20em
-        width: 20em
-        color: #fff
+	.splide__arrow svg
+		fill: none
+		height: 20em
+		width: 20em
+		color: #fff
 
-    .splide__arrow
-        background: none
-        top: 97%
+	.splide__arrow
+		background: none
+		top: 97%
+
 
 @keyframes snow
-    from
-        transform: translateY(-2000px)
-    to
-        transform: translateY(2000px)
+	from
+		transform: translateY(-2000px)
+	to
+		transform: translateY(2000px)
 
 @keyframes typing
-    0%
-        width: 0
+	0%
+		width: 0
 
-    100%
-        width: 27rem
+	100%
+		width: 27rem
 
 @keyframes show
-    100%
-        opacity: 100
+	100%
+		opacity: 100
 
 @keyframes blink
-    50%
-        border-color: transparent
+	50%
+		border-color: transparent
 
 @keyframes scroll
-    0%
-        opacity: 0
+	0%
+		opacity: 0
 
-    50%
-        opacity: 1
-        transform: rotate(45deg) translate(10px, 10px)
+	50%
+		opacity: 1
+		transform: rotate(45deg) translate(5px, 5px)
 
-    100%
-        opacity: 0
+	100%
+		opacity: 0
 
-@media screen and (max-width: 48rem)
-    .projects .project
-        display: flex
-        flex-direction: column
-        height: 48rem
+@keyframes scroll-message
+	0%
+		opacity: 0
 
-    .contact__form__submit-wrap
-        text-align: center
+	50%
+		opacity: 1
+
+	100%
+		opacity: 0
+
+@media screen and (max-width: 56rem)
+	.projects .project
+		display: flex
+		flex-direction: column
+
+	.contact__form__submit-wrap
+		text-align: center
 
 @media screen and (max-width: 32rem)
-    html
-        font-size: 9px
+	html
+		font-size: 9px
 
-    .hero__title-wrap
-        letter-spacing: 6px
+	.scroll span
+		width: 10px
+		height: 10px
+		margin: -5px
+		border-right: 1px solid #fff
+		border-bottom: 1px solid #fff
 
-    .hero__name
-        width: 100%
+	.hero__title-wrap
+		letter-spacing: 6px
 
-    .skills__content-wrap
-        display: flex
-        flex-direction: column
-        padding-left: 2rem
+	.hero__name
+		width: 100%
 
-    .projects .project
-        display: flex
-        flex-direction: column
-        height: 56rem
+	.skills__content-wrap
+		display: flex
+		flex-direction: column
+		padding-left: 2rem
 
-    .projects .project__info
-        padding-bottom: 5rem
+	.projects .project
+		display: flex
+		flex-direction: column
 
-    .contact__form__address-wrap
-        display: flex
-        flex-direction: column
-        gap: 1rem
+	.projects .project__info
+		padding-bottom: 5rem
 
-    .contact__form__submit-wrap
-        text-align: center
+	.contact__form__address-wrap
+		display: flex
+		flex-direction: column
+		gap: 1rem
+
+	.contact__form__submit-wrap
+		text-align: center
 
 @media screen and (max-width: 21.5rem)
-    .projects .project
-        display: flex
-        flex-direction: column
-        height: 52rem
+	.projects .project
+		display: flex
+		flex-direction: column
 
 @media screen and (min-width: 131rem)
-    html
-        font-size: 24px
+	html
+		font-size: 24px
 
-    .hero
-        &__links__item svg
-            height: 1.5rem
-            width: 1.5rem
+	.hero
+		&__links__item svg
+			height: 1.5rem
+			width: 1.5rem
 
-        &__title-wrap
-            min-width: 13ch
+		&__title-wrap
+			min-width: 13ch
 
-        &__name
-            width: 13ch
-
-    .projects .project__info__contributions__item
-        margin-top: .5em
-        svg
-            width: 1em
-            height: 1em
-            flex-shrink: 0
+		&__name
+			width: 13ch
