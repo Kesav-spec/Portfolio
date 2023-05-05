@@ -1,0 +1,130 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+@import 'tippy.js/dist/tippy.css'
+
+@function multiple-box-shadow ($n)
+	$value: '#{random(3000)}px #{random(3000)}px #FFF'
+	@for $i from 2 through $n
+		$value: '#{$value} , #{random(3000)}px #{random(3000)}px #FFF'
+	@return unquote($value)
+
+$shadows-small: multiple-box-shadow(700)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big: multiple-box-shadow(100)
+
+#smolsnow
+	width: 1px
+	height: 1px
+	background: transparent
+	box-shadow: $shadows-small
+	animation: snow 120s linear infinite
+
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 1px
+		height: 1px
+		background: transparent
+		box-shadow: $shadows-small
+
+#midsnow
+	width: 2px
+	height: 2px
+	background: transparent
+	box-shadow: $shadows-medium
+	animation: snow 200s linear infinite
+
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 2px
+		height: 2px
+		background: transparent
+		box-shadow: $shadows-medium
+
+#bigsnow
+	width: 3px
+	height: 3px
+	background: transparent
+	box-shadow: $shadows-big
+	animation: snow 300s linear infinite
+
+	&:after
+		content: " "
+		position: absolute
+		top: 2000px
+		width: 3px
+		height: 3px
+		background: transparent
+		box-shadow: $shadows-big
+
+.form__field
+	&:focus, &:valid
+		outline: 0
+
+		&+.form__label
+			color: #fff
+			transform: translateY(-1.5rem)
+
+.tippy-box[data-theme~='clean']
+	background-color: #ffffff00
+	color: #fff
+	text-transform: uppercase
+	letter-spacing: .1rem
+	font-weight: 400
+	font-size: .75rem
+
+@keyframes snow
+	from
+		transform: translateY(-2000px)
+	to
+		transform: translateY(4000px)
+
+@keyframes typing
+	0%
+		width: 0
+
+	100%
+		width: 27rem
+
+@keyframes show
+	100%
+		opacity: 100
+
+@keyframes blink
+	50%
+		border-color: transparent
+
+@keyframes scroll
+	0%
+		opacity: 0
+
+	50%
+		opacity: 1
+		transform: rotate(45deg) translate(5px, 5px)
+
+	100%
+		opacity: 0
+
+@keyframes scroll-message
+	0%
+		opacity: 0
+
+	50%
+		opacity: 1
+
+	100%
+		opacity: 0
+
+*::-webkit-scrollbar
+	width: 0.4em
+
+*::-webkit-scrollbar-track
+	background: #090A0F
+
+*::-webkit-scrollbar-thumb
+	background: #555
+	border-radius: 0rem
