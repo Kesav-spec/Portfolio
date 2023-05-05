@@ -32,7 +32,15 @@ export default function ImageCarousal({ projectName, imagesCount }: ImageCarousa
 				<SplideTrack>
 					{images.map((img, idx) => (
 						<SplideSlide key={idx} className="splide2 relative h-full w-full">
-							<Image width={1270} height={720} quality={100} src={img} alt="" />
+							<Image
+								width={1280}
+								height={720}
+								quality={80}
+								style={{ objectFit: "cover" }}
+								src={img}
+								loading="eager"
+								alt=""
+							/>
 						</SplideSlide>
 					))}
 				</SplideTrack>

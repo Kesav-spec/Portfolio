@@ -10,7 +10,8 @@ export default function CerticateCard({ title, link, image, issuer, date }: Cert
 					alt=""
 					width={250}
 					height={250}
-					quality={100}
+					quality={80}
+					style={{ objectFit: "cover" }}
 					className="w-3/4"
 				/>
 			</div>
