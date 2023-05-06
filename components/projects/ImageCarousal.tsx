@@ -10,7 +10,7 @@ export default function ImageCarousal({ projectName, imagesCount }: ImageCarousa
 	const images: string[] = [];
 
 	for (let i = 1; i <= imagesCount; i++) {
-		images.push(`/assets/projects/${projectName.replaceAll(" ", "")}/${i}.png`);
+		images.push(`/assets/projects/${projectName.replaceAll(" ", "")}/${i}.webp`);
 	}
 
 	return (
@@ -23,7 +23,6 @@ export default function ImageCarousal({ projectName, imagesCount }: ImageCarousa
 					type: "loop",
 					drag: false,
 					autoplay: true,
-					rewind: true,
 					interval: 3000,
 					perPage: 1,
 					lazyLoad: "nearby",
@@ -31,15 +30,17 @@ export default function ImageCarousal({ projectName, imagesCount }: ImageCarousa
 				}}>
 				<SplideTrack>
 					{images.map((img, idx) => (
-						<SplideSlide key={idx} className="splide2 relative h-full w-full">
+						<SplideSlide
+							key={idx}
+							className="splide2 relative aspect-video h-full w-full">
 							<Image
-								width={1280}
-								height={720}
-								quality={80}
-								style={{ objectFit: "cover" }}
 								src={img}
+								fill={true}
+								style={{ objectFit: "cover" }}
 								loading="eager"
 								alt=""
+								className="absolute"
+								unoptimized
 							/>
 						</SplideSlide>
 					))}
