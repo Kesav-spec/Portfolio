@@ -11,8 +11,8 @@ export default function ProjectSection() {
 	const tips = useMemo(
 		() => [
 			"Hint: You can scroll down the description to read more.",
-			"Hint: You can click on the arrows to navigate through the projects.",
 			"Hint: You can swipe to navigate through the projects.",
+			"Hint: You can hover over the image to pause the slider",
 		],
 		[],
 	);
