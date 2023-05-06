@@ -22,10 +22,10 @@ export default function Project({
 						href={previewLink || "#"}
 						target="_blank"
 						prefetch={false}
-						className={`rounded-[5px] border border-white p-[0.75em] text-sm font-bold text-white no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
+						className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold  no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
 							previewLink
-								? ""
-								: "pointer-events-none border-[#aaa] bg-transparent text-[#aaa]"
+								? "border-white text-white"
+								: "pointer-events-none border-[#aaa]  text-[#aaa]"
 						}`}>
 						{previewLink ? "Live Preview" : "No Live Preview"}
 					</Link>
@@ -33,10 +33,10 @@ export default function Project({
 						href={sourceLink || "#"}
 						target="_blank"
 						prefetch={false}
-						className={`rounded-[5px] border border-white p-[0.75em] text-sm font-bold text-white no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
+						className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold text-white no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
 							sourceLink
-								? ""
-								: "pointer-events-none border-[#aaa] bg-transparent text-[#aaa]"
+								? "border-white text-white "
+								: "pointer-events-none border-[#aaa] text-[#aaa]"
 						}`}>
 						{sourceLink ? "Source Code" : "Private Source Code"}
 					</Link>
