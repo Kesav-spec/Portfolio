@@ -4,7 +4,7 @@ export const skills: Skills = {
 	Frontend: ["HTML", "CSS", "Sass", "TailwindCSS"],
 	Backend: ["Django", "Flask", "FastAPI"],
 	Databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
-	Tools: ["Git", "Docker", "Prisma"],
 	Services: ["Supabase", "IBMCloud", "Vercel", "PlanetScale", "Cloudflare"],
+	Tools: ["Git", "Docker"],
 	Design: ["Adobe Photoshop", "Figma"],
 };
