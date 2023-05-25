@@ -45,7 +45,7 @@ export const projects: Project[] = [
 		title: "Handwritten Digit Recognition",
 		imagesCount: 3,
 		tech: ["Python", "Flask", "Tensorflow", "IBM Cloud", "HTML", "SCSS", "Javascript"],
-		previewLink: null,
+		previewLink: "https://digitrecognition.up.railway.app/",
 		sourceLink: "https://github.com/nishanthrj/Handwritten-Digit-Recognition",
 		description: [
 			"Created a web application that uses a convolutional neural network to analyze and detect handwritten digits.",
