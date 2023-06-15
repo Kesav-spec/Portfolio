@@ -13,7 +13,7 @@ export const projects: Project[] = [
 			"MongoDB",
 			"Supabase",
 		],
-		previewLink: "https://hoshi.ga",
+		previewLink: "https://hoshi-beta.vercel.app",
 		sourceLink: "https://github.com/nishanthrj/Hoshi",
 		description: [
 			"Built a comprehensive web platform for anime and manga enthusiasts, delivering information on over 22,000 anime and 60,000 manga titles.",
