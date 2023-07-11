@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en" className="bg-[#090A0F] text-[10px] sm:text-[16px] 3xl:text-[20px]">
+		<html lang="en" className="bg-[#090A0F] text-[10px] sm:text-[14px] 3xl:text-[20px]">
 			<body className={overpass.className}>{children}</body>
 		</html>
 	);
