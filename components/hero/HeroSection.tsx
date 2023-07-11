@@ -8,7 +8,7 @@ export default function HeroSection() {
 		<section className="grid min-h-screen place-items-center">
 			<div className="flex flex-col items-center gap-2">
 				<div className="min-w-[28rem] text-5xl font-normal tracking-[6px] text-white sm:tracking-[10px]">
-					<span className="block w-[28rem] animate-[typing_2s_linear,_blink_.5s_step-end_infinite_alternate] overflow-hidden whitespace-nowrap border-r-[3px] text-[1em] uppercase text-[#ECECEC]">
+					<span className="block w-[28rem] animate-[typing_2s_linear,_blink_.5s_step-end_infinite_alternate] overflow-hidden whitespace-nowrap border-r-[3px] text-[1em] uppercase text-[#ECECEC] 3xl:w-[26rem]">
 						Nishanth R J
 					</span>
 				</div>
