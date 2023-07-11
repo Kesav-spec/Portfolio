@@ -8,11 +8,15 @@ interface SkillGroupProps {
 
 export default function SkillGroup({ heading, skills }: SkillGroupProps) {
 	return (
-		<div>
-			<h2 className="mb-6 text-xl font-bold uppercase tracking-[0.15rem]">{heading}</h2>
-			{skills.map((skill) => (
-				<SkillItem skill={skill} Icon={getIcon(skill)!} key={skill} />
-			))}
+		<div className="flex flex-col items-center">
+			<div className="w-min">
+				<h2 className="mb-6 text-center text-xl font-bold uppercase tracking-[0.15rem]">
+					{heading}
+				</h2>
+				{skills.map((skill) => (
+					<SkillItem skill={skill} Icon={getIcon(skill)!} key={skill} />
+				))}
+			</div>
 		</div>
 	);
 }
