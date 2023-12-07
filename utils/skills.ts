@@ -28,6 +28,7 @@ import {
 	SiJupyter,
 	SiMicrosoftoffice,
 	SiNetlify,
+	SiNodedotjs,
 	SiPandas,
 	SiPlanetscale,
 	SiPrisma,
@@ -51,6 +52,8 @@ export function getIcon(skill: string) {
 			return SiNextdotjs;
 		case "react":
 			return SiReact;
+		case "node.js":
+			return SiNodedotjs;
 		case "html":
 			return SiHtml5;
 		case "css":
