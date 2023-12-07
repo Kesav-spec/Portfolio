@@ -1,7 +1,7 @@
 interface Skills {
 	[key: string]: string[];
 	"Programming Languages": string[];
-	Frameworks: string[];
+	// Frameworks: string[];
 	Frontend: string[];
 	Backend: string[];
 	Databases: string[];

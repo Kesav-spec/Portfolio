@@ -50,11 +50,11 @@ export function getIcon(skill: string) {
 			return SiDocker;
 		case "nextjs":
 			return SiNextdotjs;
-		case "react":
+		case "reactjs":
 			return SiReact;
-		case "node.js":
+		case "nodejs":
 			return SiNodedotjs;
-		case "html":
+		case "htmlcss":
 			return SiHtml5;
 		case "css":
 			return SiCss3;
@@ -86,7 +86,7 @@ export function getIcon(skill: string) {
 			return SiIbmcloud;
 		case "vercel":
 			return SiVercel;
-		case "adobephotoshop":
+		case "photoshop":
 			return SiAdobephotoshop;
 		case "figma":
 			return SiFigma;
