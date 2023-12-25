@@ -9,7 +9,7 @@ export const skills_en: Skills = {
 	Design: ["Photoshop", "Figma"],
 };
 
-export const skills_jp = {
+export const skills_jp: Skills = {
 	プログラミング言語: ["Python", "JavaScript", "TypeScript"],
 	// フレームワーク: ["React", "Next.js"],
 	フロントエンド: ["React.js", "Next.js", "HTML＆CSS", "Sass", "TailwindCSS"],

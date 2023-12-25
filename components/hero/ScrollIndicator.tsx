@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ message }: { message: string }) {
 	const ref = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ export default function ScrollIndicator() {
 			</div>
 			<div className="animate-[show_.5s_4s_ease-in-out_forwards] opacity-0 transition-opacity duration-700">
 				<span className="absolute bottom-12 left-0 right-0 block animate-[scroll-message_2s_infinite] overflow-hidden text-center text-sm font-normal uppercase tracking-[0.1rem] text-[#ECECEC] sm:text-xs">
-					Scroll Down
+					{message}
 				</span>
 			</div>
 		</div>

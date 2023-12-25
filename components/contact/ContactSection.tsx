@@ -1,11 +1,16 @@
 import Section from "../common/Section";
 import ContactForm from "./ContactForm";
+import { useLangStore } from "@/utils/store";
+import { getDictionary } from "@/utils/dictionary";
 
-export default function ContactSection() {
+export default async function ContactSection() {
+	const lang = useLangStore.getState().lang ?? "en";
+	const dict = await getDictionary(lang);
+
 	return (
-		<Section title="contact">
+		<Section title={dict.contact.title}>
 			<div className="mt-4 flex w-full flex-col items-center">
-				<ContactForm />
+				<ContactForm dict={dict} />
 			</div>
 		</Section>
 	);

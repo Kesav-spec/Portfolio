@@ -1,4 +1,5 @@
 "use client";
+
 import { useInView } from "react-intersection-observer";
 import "animate.css";
 

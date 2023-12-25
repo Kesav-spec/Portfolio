@@ -1,0 +1,61 @@
+{
+	"main": {
+		"title": "Nishanth R J | Portfolio",
+		"lang": "en"
+	},
+	"hero": {
+		"name": "Nishanth R J",
+		"links": {
+			"email": "E-mail",
+			"linkedin": "LinkedIn",
+			"github": "Github",
+			"wantedly": "Wantedly",
+			"resume": "Resume"
+		},
+		"resumePath": "/assets/hero/Nishanth R J - Resume.pdf",
+		"scrollMessage": "Scroll down"
+	},
+	"skills": {
+		"title": "skills"
+	},
+	"projects": {
+		"title": "projects",
+		"buttons": {
+			"livePreview": "Live Preview",
+			"noLivePreview": "No Live Preview",
+			"sourceCode": "Source Code",
+			"noSourceCode": "Private Source Code"
+		},
+		"hints": [
+			"Hint: You can scroll down the description to read more.",
+			"Hint: You can swipe to navigate through the projects.",
+			"Hint: You can hover over the image to pause the slideshow."
+		]
+	},
+	"certifications": {
+		"title": "certifications"
+	},
+	"journey": {
+		"title": "journey"
+	},
+	"contact": {
+		"title": "contact",
+		"messages": {
+			"noName": "Please enter your name",
+			"noEmail": "Please enter your email",
+			"invalidEmail": "Invalid email address",
+			"noMessage": "Please enter a message",
+			"noSubject": "Please enter a subject",
+			"success": "Your message has been submitted successfully.",
+			"failed": "Failed to submit your message. Try again later."
+		},
+		"label": {
+			"name": "Full name",
+			"email": "Email",
+			"subject": "Subject",
+			"message": "Message",
+			"submitting": "Submitting...",
+			"submit": "Submit"
+		}
+	}
+}
