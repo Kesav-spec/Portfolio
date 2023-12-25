@@ -2,6 +2,7 @@ export const projects_en: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Hoshi",
+		engTitle: "Hoshi",
 		imagesCount: 15,
 		tech: [
 			"Next.js",
@@ -27,6 +28,7 @@ export const projects_en: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Realest",
+		engTitle: "Realest",
 		imagesCount: 10,
 		tech: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Javascript", "Bootstrap"],
 		previewLink: "https://realest.up.railway.app/",
@@ -43,6 +45,7 @@ export const projects_en: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Handwritten Digit Recognition",
+		engTitle: "Handwritten Digit Recognition",
 		imagesCount: 3,
 		tech: ["Python", "Flask", "Tensorflow", "IBM Cloud", "HTML", "SCSS", "Javascript"],
 		previewLink: "https://digitrecognition-19lb.onrender.com",
@@ -60,6 +63,7 @@ export const projects_en: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Forest Fire Detection",
+		engTitle: "Forest Fire Detection",
 		imagesCount: 3,
 		tech: ["Python", "Tensorflow", "OpenCV", "Twilio"],
 		previewLink: null,
@@ -78,6 +82,7 @@ export const projects_jp: Project[] = [
 	{
 		type: "個人プロジェクト",
 		title: "ホシ",
+		engTitle: "Hoshi",
 		imagesCount: 15,
 		tech: [
 			"Next.js",
@@ -103,6 +108,7 @@ export const projects_jp: Project[] = [
 	{
 		type: "個人プロジェクト",
 		title: "リアレスト",
+		engTitle: "Realest",
 		imagesCount: 10,
 		tech: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Javascript", "Bootstrap"],
 		previewLink: "https://realest.up.railway.app/",
@@ -119,6 +125,7 @@ export const projects_jp: Project[] = [
 	{
 		type: "個人プロジェクト",
 		title: "手書き数字認識",
+		engTitle: "Handwritten Digit Recognition",
 		imagesCount: 3,
 		tech: ["Python", "Flask", "Tensorflow", "IBM Cloud", "HTML", "SCSS", "Javascript"],
 		previewLink: "https://digitrecognition-19lb.onrender.com",
@@ -129,13 +136,14 @@ export const projects_jp: Project[] = [
 			"手書き数字認識の広く使用されているベンチマークデータセットであるMNISTデータセットを使用しました。",
 			"モデルパフォーマンスを向上させ、過学習を減少させるために画像をモデルに供給する前に前処理を行いました。",
 			"モデルはトレーニング精度99.14％、テスト精度97.76％を達成しています。",
-			"モデルはIBM Cloudにデプロイされており、アプリケーションからIBMのAPIを介してアクセスできます。",
+			"モデルはIBM Cloudにデプロイされており、アプリケーションからIBMのAPIを介してアクセスできます。（現在、IBMの無料トライアルが終了したため、私は独自のサーバーでモデルを実行しています。）",
 			"シンプルで使いやすいインターフェースを提供し、技術的な経験の有無にかかわらず、誰でも簡単に使用できるウェブアプリケーションです。",
 		],
 	},
 	{
 		type: "個人プロジェクト",
 		title: "森林火災検知",
+		engTitle: "Forest Fire Detection",
 		imagesCount: 3,
 		tech: ["Python", "Tensorflow", "OpenCV", "Twilio"],
 		previewLink: null,

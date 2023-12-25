@@ -1,12 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
-interface ImageCarousalProps {
+interface ProjectImagesProps {
 	projectName: string;
 	imagesCount: number;
 }
 
-export default function ImageCarousal({ projectName, imagesCount }: ImageCarousalProps) {
+export default function ProjectImages({ projectName, imagesCount }: ProjectImagesProps) {
 	const images: string[] = [];
 
 	for (let i = 1; i <= imagesCount; i++) {
