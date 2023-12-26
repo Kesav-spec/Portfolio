@@ -1,7 +1,9 @@
 import { redirect } from "next/navigation";
-import { useLangStore } from "@/utils/store";
+import { useLangStore } from "@/app/store";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-	useLangStore.getState().setLang("jp");
+	useLangStore.setState({ lang: "jp" });
 	redirect("/");
 }

@@ -1,12 +1,12 @@
-import Section from "../common/Section";
-import JourneyItem from "./JourneyItem";
-import { journey_en, journey_jp } from "@/data/journey";
-import { useLangStore } from "@/utils/store";
+import Section from "@/components/common/Section";
+import JourneyItem from "@/components/journey/JourneyItem";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
+import { journeyEN, journeyJP } from "@/data/journey";
 
 export default async function JourneySection() {
 	const lang = useLangStore.getState().lang ?? "en";
-	const journey = lang === "en" ? journey_en : journey_jp;
+	const journey = lang === "en" ? journeyEN : journeyJP;
 	const dict = await getDictionary(lang);
 
 	return (

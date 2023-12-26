@@ -1,6 +1,5 @@
-export const skills_en: Skills = {
+export const skillsEN: Skills = {
 	"Programming Languages": ["Python", "JavaScript", "TypeScript"],
-	// Frameworks: ["React", "Next.js"],
 	Frontend: ["React.js", "Next.js", "HTML & CSS", "Sass", "TailwindCSS"],
 	Backend: ["Node.js", "Django", "Flask", "FastAPI"],
 	Databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
@@ -9,9 +8,8 @@ export const skills_en: Skills = {
 	Design: ["Photoshop", "Figma"],
 };
 
-export const skills_jp: Skills = {
+export const skillsJP: Skills = {
 	プログラミング言語: ["Python", "JavaScript", "TypeScript"],
-	// フレームワーク: ["React", "Next.js"],
 	フロントエンド: ["React.js", "Next.js", "HTML＆CSS", "Sass", "TailwindCSS"],
 	バックエンド: ["Node.js", "Django", "Flask", "FastAPI"],
 	データベース: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],

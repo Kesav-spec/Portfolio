@@ -1,4 +1,4 @@
-export const certificates_en: Certificate[] = [
+export const certificatesEN: Certificate[] = [
 	{
 		title: "MTA: Security Fundamentals",
 		link: "https://www.credly.com/badges/03d19a1c-dccc-462c-866d-3c9e298abdd5/public_url",
@@ -36,7 +36,7 @@ export const certificates_en: Certificate[] = [
 	},
 ];
 
-export const certificates_jp: Certificate[] = [
+export const certificatesJP: Certificate[] = [
 	{
 		title: "MTA: セキュリティの基本",
 		link: "https://www.credly.com/badges/03d19a1c-dccc-462c-866d-3c9e298abdd5/public_url",

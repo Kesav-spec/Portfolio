@@ -1,17 +1,16 @@
-import ScrollIndicator from "./ScrollIndicator";
-import SocialLink from "./SocialLink";
 import { SiGithub, SiLinkedin, SiWantedly } from "react-icons/si";
 import { FiMail, FiFileText } from "react-icons/fi";
+import ScrollIndicator from "@/components/hero/ScrollIndicator";
+import SocialLink from "@/components/hero/SocialLink";
 import { getDictionary } from "@/utils/dictionary";
-import { useLangStore } from "@/utils/store";
-
-interface CustomCSS extends CSSProperties {
-	"--width": string;
-}
+import { useLangStore } from "@/app/store";
+import { CustomCSS } from "@/types/custom";
 
 export default async function HeroSection() {
 	const lang = useLangStore.getState().lang ?? "en";
 	const dict = await getDictionary(lang);
+
+	const customStyle: CustomCSS = { "--width": lang === "jp" ? "50rem" : "28rem" };
 
 	return (
 		<section className="grid min-h-screen place-items-center">
@@ -23,7 +22,7 @@ export default async function HeroSection() {
 								? "text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem]"
 								: "text-[3rem]"
 						}`}
-						style={{ "--width": `${lang === "jp" ? "50rem" : "28rem"}` } as CustomCSS}>
+						style={customStyle}>
 						{dict.hero.name}
 					</span>
 				</div>
@@ -48,11 +47,11 @@ export default async function HeroSection() {
 						link="https://www.wantedly.com/id/nishanthrj"
 						Icon={SiWantedly}
 					/>
-					<SocialLink
+					{/* <SocialLink
 						text={dict.hero.links.resume}
 						link={dict.hero.resumePath}
 						Icon={FiFileText}
-					/>
+					/> */}
 				</div>
 				<ScrollIndicator message={dict.hero.scrollMessage} />
 			</div>

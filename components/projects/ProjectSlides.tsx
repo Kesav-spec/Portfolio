@@ -2,14 +2,8 @@
 
 import "@/styles/splide.sass";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import SplideArrows from "./SplideArrows";
-import Section from "../common/Section";
-import Hints from "./Hints";
-
-interface ProjectSlidesProps {
-	projects: React.ReactNode[];
-	hints: string[];
-}
+import SplideArrows from "@/components/projects/SplideArrows";
+import Hints from "@/components/projects/Hints";
 
 export default function ProjectSlides({ projects, hints }: ProjectSlidesProps) {
 	return (

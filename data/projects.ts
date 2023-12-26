@@ -1,4 +1,4 @@
-export const projects_en: Project[] = [
+export const projectsEN: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Hoshi",
@@ -78,7 +78,7 @@ export const projects_en: Project[] = [
 	},
 ];
 
-export const projects_jp: Project[] = [
+export const projectsJP: Project[] = [
 	{
 		type: "個人プロジェクト",
 		title: "ホシ",

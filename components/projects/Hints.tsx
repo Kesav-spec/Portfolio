@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 export default function Hints({ hints }: { hints: string[] }) {
-	const tips = useMemo(() => hints, []);
+	const tips = useMemo(() => hints, [hints]);
 
 	const [tipNum, setTipNum] = useState(1);
 	const [tip, setTip] = useState<string>(tips[0]);

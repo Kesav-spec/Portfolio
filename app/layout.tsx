@@ -1,7 +1,8 @@
 import "@/styles/globals.sass";
-import { Overpass, Noto_Sans_JP } from "next/font/google";
+
 import { headers } from "next/headers";
-import { useLangStore } from "@/utils/store";
+import { Overpass, Noto_Sans_JP } from "next/font/google";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
 
 const overpass = Overpass({ subsets: ["latin"] });
@@ -17,14 +18,7 @@ export async function generateMetadata() {
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-	let lang: Language = "en";
-
-	const header = headers();
-	if (!useLangStore.getState().lang) {
-		lang = header.get("accept-language")?.split(",")?.[0].includes("ja") ? "jp" : "en";
-		useLangStore.getState().setLang(lang);
-	}
-
+	const lang = useLangStore.getState().lang ?? "en";
 	const dict = await getDictionary(lang);
 
 	return (

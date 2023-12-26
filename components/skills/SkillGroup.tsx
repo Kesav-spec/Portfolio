@@ -1,11 +1,5 @@
-import { getIcon } from "../../utils/skills";
-import SkillItem from "./SkillItem";
-
-interface SkillGroupProps {
-	heading: string;
-	skills: string[];
-	lang: Language;
-}
+import SkillItem from "@/components/skills/SkillItem";
+import { getIcon } from "@/utils/skills";
 
 export default function SkillGroup({ heading, skills, lang }: SkillGroupProps) {
 	return (

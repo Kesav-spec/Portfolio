@@ -3,11 +3,6 @@
 import Image from "next/image";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
-interface ProjectImagesProps {
-	projectName: string;
-	imagesCount: number;
-}
-
 export default function ProjectImages({ projectName, imagesCount }: ProjectImagesProps) {
 	const images: string[] = [];
 
@@ -40,7 +35,7 @@ export default function ProjectImages({ projectName, imagesCount }: ProjectImage
 								fill={true}
 								style={{ objectFit: "cover" }}
 								loading="eager"
-								alt=""
+								alt={`${projectName} Screenshot ${idx + 1}`}
 								className="absolute"
 								unoptimized
 							/>

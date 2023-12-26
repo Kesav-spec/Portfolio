@@ -1,6 +1,6 @@
-import Section from "../common/Section";
-import ContactForm from "./ContactForm";
-import { useLangStore } from "@/utils/store";
+import Section from "@/components/common/Section";
+import ContactForm from "@/components/contact/ContactForm";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
 
 export default async function ContactSection() {

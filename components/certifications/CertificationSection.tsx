@@ -1,12 +1,12 @@
-import Section from "../common/Section";
-import CertificateCard from "./CertificateCard";
-import { certificates_en, certificates_jp } from "@/data/certificates";
-import { useLangStore } from "@/utils/store";
+import Section from "@/components/common/Section";
+import CertificateCard from "@/components/certifications/CertificateCard";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
+import { certificatesEN, certificatesJP } from "@/data/certificates";
 
 export default async function CertificationSection() {
 	const lang = useLangStore.getState().lang ?? "en";
-	const certificates = lang === "jp" ? certificates_jp : certificates_en;
+	const certificates = lang === "jp" ? certificatesJP : certificatesEN;
 	const dict = await getDictionary(lang);
 
 	return (

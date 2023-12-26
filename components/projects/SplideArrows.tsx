@@ -1,4 +1,4 @@
-import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function SplideArrows() {
 	return (

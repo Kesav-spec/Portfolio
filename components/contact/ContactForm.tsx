@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import InputField from "./InputField";
-import Spinner from "../common/Spinner";
+import Spinner from "@/components/common/Spinner";
+import InputField from "@/components/contact/InputField";
 
-export default function ContactForm({ dict }: { dict: Dictionary }) {
+export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 	const [success, setSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string | null>(null);
 
@@ -28,7 +28,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
 			message: Yup.string().required(dict.contact.messages.noMessage),
 		}),
 
-		onSubmit: async (values) => {
+		onSubmit: (values) => {
 			axios({
 				method: "POST",
 				url: "https://formbold.com/s/9Exr6",

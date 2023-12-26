@@ -1,12 +1,12 @@
-import { skills_en, skills_jp } from "@/data/skills";
-import SkillGroup from "./SkillGroup";
-import Section from "../common/Section";
-import { useLangStore } from "@/utils/store";
+import Section from "@/components/common/Section";
+import SkillGroup from "@/components/skills/SkillGroup";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
+import { skillsEN, skillsJP } from "@/data/skills";
 
 export default async function SkillsSection() {
 	const lang = useLangStore.getState().lang ?? "en";
-	const skills = lang === "jp" ? skills_jp : skills_en;
+	const skills = lang === "jp" ? skillsJP : skillsEN;
 	const dict = await getDictionary(lang);
 
 	return (

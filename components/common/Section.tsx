@@ -1,14 +1,9 @@
 "use client";
 
-import { useInView } from "react-intersection-observer";
 import "animate.css";
+import { useInView } from "react-intersection-observer";
 
-interface SectionProps {
-	title: string;
-	children: React.ReactNode;
-}
-
-export default function Section({ title, children }: SectionProps) {
+export default function Section({ title, children }: Readonly<SectionProps>) {
 	const { ref, inView } = useInView({ triggerOnce: true });
 
 	return (

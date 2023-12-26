@@ -1,4 +1,4 @@
-import { useLangStore } from "@/utils/store";
+import { useLangStore } from "@/app/store";
 
 export default function LangSelector() {
 	const lang = useLangStore.getState().lang;

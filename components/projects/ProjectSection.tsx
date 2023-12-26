@@ -1,19 +1,19 @@
-import Section from "../common/Section";
-import { useLangStore } from "@/utils/store";
+import Section from "@/components/common/Section";
+import ProjectSlides from "@/components/projects/ProjectSlides";
+import Project from "@/components/projects/Project";
+import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
-import { projects_en, projects_jp } from "@/data/projects";
-import ProjectSlides from "./ProjectSlides";
-import Project from "./Project";
+import { projectsEN, projectsJP } from "@/data/projects";
 
 export default async function ProjectSection() {
 	const lang = useLangStore.getState().lang ?? "en";
-	const projects = lang === "jp" ? projects_jp : projects_en;
+	const projects = lang === "jp" ? projectsJP : projectsEN;
 	const dict = await getDictionary(lang);
 	return (
 		<Section title={dict.projects.title}>
 			<ProjectSlides
 				projects={projects.map((project, idx) => (
-					<Project key={idx} {...project} />
+					<Project key={idx} project={project} />
 				))}
 				hints={dict.projects.hints}
 			/>

@@ -1,12 +1,5 @@
 import Link from "next/link";
-import { IconType } from "react-icons";
-import TippyWrapper from "./TippyWrapper";
-
-interface SocialLinkProps {
-	text: string;
-	link: string;
-	Icon: IconType;
-}
+import TippyWrapper from "@/components/hero/TippyWrapper";
 
 export default function SocialLinks({ text, link, Icon }: SocialLinkProps) {
 	return (

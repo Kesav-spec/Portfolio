@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 interface LangStore {
-	lang: Language | null;
+	lang: Language;
 	setLang: (value: Language) => void;
 }
 
 export const useLangStore = create<LangStore>()((set) => ({
-	lang: null,
+	lang: "en",
 	setLang: (value: Language) => set({ lang: value }),
 }));
