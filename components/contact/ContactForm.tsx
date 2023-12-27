@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState, useRef } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
 import Spinner from "@/components/common/Spinner";
 import InputField from "@/components/contact/InputField";
@@ -10,6 +10,7 @@ import InputField from "@/components/contact/InputField";
 export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 	const [success, setSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string | null>(null);
+	const formRef = useRef<HTMLFormElement | null>(null);
 
 	const formik = useFormik({
 		initialValues: {
@@ -28,17 +29,22 @@ export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 			message: Yup.string().required(dict.contact.messages.noMessage),
 		}),
 
-		onSubmit: (values) => {
+		onSubmit: (values, { setSubmitting, resetForm }) => {
 			axios({
 				method: "POST",
 				url: "https://formbold.com/s/9Exr6",
 				data: values,
 			})
-				.then((r) => {
+				.then(() => {
 					setSuccess(true);
+					resetForm();
+					formRef.current && formRef.current.reset();
 				})
-				.catch((r) => {
+				.catch(() => {
 					setError(dict.contact.messages.failed);
+				})
+				.finally(() => {
+					setSubmitting(false);
 				});
 		},
 
@@ -74,6 +80,7 @@ export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 			<form
 				className="flex w-3/4 flex-col gap-4"
 				method="post"
+				ref={formRef}
 				onSubmit={formik.handleSubmit}
 				noValidate>
 				<div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8">
@@ -113,7 +120,11 @@ export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 				<div className="my-12 text-center md:my-8 md:text-end">
 					<button
 						type="submit"
-						className="rounded border border-white bg-transparent px-12 py-4 text-xl font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black md:px-6 md:py-3 md:text-base">
+						className={`inline-flex rounded border  bg-transparent px-12 py-4 text-xl font-bold uppercase  transition-all duration-300  md:px-6 md:py-3 md:text-base ${
+							!formik.isSubmitting
+								? " border-white text-white hover:bg-white hover:text-black"
+								: "cursor-default border-gray-400 text-gray-400"
+						}`}>
 						{formik.isSubmitting && <Spinner />}
 						{formik.isSubmitting
 							? dict.contact.label.submitting
