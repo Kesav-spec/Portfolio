@@ -11,8 +11,8 @@ export const journeyJP: Journey[] = [
 	{
 		id: 1,
 		title: "情報技術学士",
-		duration: "2019年8月 - 2023年7月",
-		location: "アンナ大学, インド",
+		duration: "2019年8月 ー 2023年7月",
+		location: "アンナ大学、 インド",
 		achievements: [],
 	},
 ];

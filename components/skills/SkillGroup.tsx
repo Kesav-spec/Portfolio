@@ -1,5 +1,5 @@
 import SkillItem from "@/components/skills/SkillItem";
-import { getIcon } from "@/utils/skills";
+import { getIcon } from "@/utils/icons";
 
 export default function SkillGroup({ heading, skills, lang }: SkillGroupProps) {
 	return (
