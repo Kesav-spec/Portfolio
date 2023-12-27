@@ -83,20 +83,17 @@ $shadows-big: multiple-box-shadow(100)
 	to
 		transform: translateY(2000px)
 
-@keyframes typing
-	0%
-		width: 0
-
-	100%
-		width: min(var(--width, 28rem), 90%)
-
 @keyframes show
 	100%
 		opacity: 100
 
 @keyframes blink
+	0%
+		opacity: 0
 	50%
-		border-color: transparent
+		opacity: 1
+	100%
+		opacity: 0
 
 @keyframes scroll
 	0%
@@ -105,16 +102,6 @@ $shadows-big: multiple-box-shadow(100)
 	50%
 		opacity: 1
 		transform: rotate(45deg) translate(5px, 5px)
-
-	100%
-		opacity: 0
-
-@keyframes scroll-message
-	0%
-		opacity: 0
-
-	50%
-		opacity: 1
 
 	100%
 		opacity: 0
