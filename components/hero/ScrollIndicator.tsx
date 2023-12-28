@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function ScrollIndicator({ message }: { message: string }) {
+export default function ScrollIndicator({ message }: Readonly<{ message: string }>) {
 	const ref = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -21,13 +21,13 @@ export default function ScrollIndicator({ message }: { message: string }) {
 
 	return (
 		<div ref={ref} className="transition-opacity duration-700">
-			<div className="absolute bottom-32 animate-[show_.5s_4.75s_ease-in-out_forwards] opacity-0 transition-opacity duration-700">
+			<div className="absolute bottom-32 animate-[show_.5s_3.75s_ease-in-out_forwards] opacity-0 transition-opacity duration-700">
 				<span className="-m-[5px] block h-6 w-6 rotate-45 animate-[scroll_2s_infinite] border-b border-r border-white sm:-m-[10px] sm:h-5 sm:w-5 sm:border-b-2 sm:border-r-2"></span>
 				<span className="-m-[5px] block h-6 w-6 rotate-45 animate-[scroll_2s_infinite_-0.2s] border-b border-r border-white sm:-m-[10px] sm:h-5 sm:w-5 sm:border-b-2 sm:border-r-2 "></span>
 				<span className="-m-[5px] block h-6 w-6 rotate-45 animate-[scroll_2s_infinite_-0.4s] border-b border-r border-white sm:-m-[10px] sm:h-5 sm:w-5 sm:border-b-2 sm:border-r-2 "></span>
 			</div>
-			<div className="animate-[show_.5s_4.75s_ease-in-out_forwards] opacity-0 transition-opacity duration-700">
-				<span className="absolute bottom-12 left-0 right-0 block animate-[blink_2s_infinite] overflow-hidden text-center text-sm font-normal uppercase tracking-[0.1rem] text-[#ECECEC] sm:text-xs">
+			<div className="animate-[show_.5s_3.75s_ease-in-out_forwards] opacity-0 transition-opacity duration-700">
+				<span className="absolute bottom-12 left-0 right-0 block animate-[blink_2s_infinite] overflow-hidden text-center text-base font-normal uppercase tracking-[0.1rem] text-[#ECECEC] sm:text-xs">
 					{message}
 				</span>
 			</div>

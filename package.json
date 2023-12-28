@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "1.0.0",
+	"version": "3.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -10,8 +10,6 @@
 	},
 	"dependencies": {
 		"@splidejs/react-splide": "^0.7.12",
-		"@tippyjs/react": "^4.2.6",
-		"animate.css": "^4.1.1",
 		"axios": "^1.6.2",
 		"formik": "^2.4.5",
 		"next": "14.0.4",

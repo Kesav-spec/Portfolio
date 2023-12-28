@@ -7,7 +7,7 @@ import Hints from "@/components/projects/Hints";
 
 export default function ProjectSlides({ projects, hints }: ProjectSlidesProps) {
 	return (
-		<div className="mt-12 w-full">
+		<section className="mt-12 w-full">
 			<Splide
 				hasTrack={false}
 				options={{
@@ -20,6 +20,7 @@ export default function ProjectSlides({ projects, hints }: ProjectSlidesProps) {
 					preloadPages: 3,
 					pagination: true,
 					paginationDirection: "ltr",
+					role: "region",
 				}}>
 				<SplideArrows />
 				<SplideTrack>
@@ -29,6 +30,6 @@ export default function ProjectSlides({ projects, hints }: ProjectSlidesProps) {
 				</SplideTrack>
 			</Splide>
 			<Hints hints={hints} />
-		</div>
+		</section>
 	);
 }

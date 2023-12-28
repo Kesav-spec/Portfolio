@@ -1,6 +1,5 @@
 import "@/styles/globals.sass";
 
-import { headers } from "next/headers";
 import { Overpass, Noto_Sans_JP } from "next/font/google";
 import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
@@ -14,20 +13,20 @@ export async function generateMetadata() {
 
 	return {
 		title: dict.main.title,
+		description: dict.main.description,
 	};
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-	const lang = useLangStore.getState().lang ?? "en";
+	const lang: Language = useLangStore.getState().lang ?? "en";
 	const dict = await getDictionary(lang);
+	const font = lang === "jp" ? notoSansJP : overpass;
 
 	return (
 		<html
 			lang={dict.main.lang}
 			className="bg-[#090A0F] text-[10px] sm:text-[14px] 3xl:text-[20px]">
-			<body className={lang === "jp" ? notoSansJP.className : overpass.className}>
-				{children}
-			</body>
+			<body className={font.className}>{children}</body>
 		</html>
 	);
 }

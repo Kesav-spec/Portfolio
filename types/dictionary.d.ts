@@ -1,4 +1,5 @@
 interface MainSection {
+	description: any;
 	title: string;
 	lang: string;
 }

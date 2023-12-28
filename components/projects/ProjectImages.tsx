@@ -7,11 +7,11 @@ export default function ProjectImages({ projectName, imagesCount }: ProjectImage
 	const images: string[] = [];
 
 	for (let i = 1; i <= imagesCount; i++) {
-		images.push(`/assets/projects/${projectName.replaceAll(" ", "")}/${i}.webp`);
+		images.push(`/assets/projects/${projectName.replaceAll(" ", "")}/${i}.png`);
 	}
 
 	return (
-		<div className="h-min flex-shrink-0 overflow-hidden rounded-lg border-2 border-white">
+		<section className="h-min flex-shrink-0 overflow-hidden rounded-lg border-2 border-white">
 			<Splide
 				hasTrack={false}
 				options={{
@@ -24,6 +24,7 @@ export default function ProjectImages({ projectName, imagesCount }: ProjectImage
 					perPage: 1,
 					lazyLoad: "nearby",
 					preloadPages: 3,
+					role: "region",
 				}}>
 				<SplideTrack>
 					{images.map((img, idx) => (
@@ -35,14 +36,15 @@ export default function ProjectImages({ projectName, imagesCount }: ProjectImage
 								fill={true}
 								style={{ objectFit: "cover" }}
 								loading="eager"
+								quality={80}
+								sizes="900px"
 								alt={`${projectName} Screenshot ${idx + 1}`}
 								className="absolute"
-								unoptimized
 							/>
 						</SplideSlide>
 					))}
 				</SplideTrack>
 			</Splide>
-		</div>
+		</section>
 	);
 }

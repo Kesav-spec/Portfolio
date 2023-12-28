@@ -1,117 +1,184 @@
 @tailwind base
 @tailwind components
 @tailwind utilities
-@import 'tippy.js/dist/tippy.css'
 
 @function multiple-box-shadow ($n)
-	$value: '#{random(3000)}px #{random(3000)}px #FFF'
-	@for $i from 2 through $n
-		$value: '#{$value} , #{random(3000)}px #{random(3000)}px #FFF'
-	@return unquote($value)
+    $value: '#{random(3000)}px #{random(3000)}px #FFF'
+    @for $i from 2 through $n
+        $value: '#{$value} , #{random(3000)}px #{random(3000)}px #FFF'
+    @return unquote($value)
 
 $shadows-small: multiple-box-shadow(700)
 $shadows-medium: multiple-box-shadow(200)
 $shadows-big: multiple-box-shadow(100)
 
 #smolsnow
-	width: 1px
-	height: 1px
-	background: transparent
-	box-shadow: $shadows-small
-	animation: snow 120s linear infinite
+    width: 1px
+    height: 1px
+    background: transparent
+    box-shadow: $shadows-small
+    animation: snow 120s linear infinite
 
-	&:after
-		content: " "
-		position: absolute
-		top: 2000px
-		width: 1px
-		height: 1px
-		background: transparent
-		box-shadow: $shadows-small
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 1px
+        height: 1px
+        background: transparent
+        box-shadow: $shadows-small
 
 #midsnow
-	width: 2px
-	height: 2px
-	background: transparent
-	box-shadow: $shadows-medium
-	animation: snow 200s linear infinite
+    width: 2px
+    height: 2px
+    background: transparent
+    box-shadow: $shadows-medium
+    animation: snow 200s linear infinite
 
-	&:after
-		content: " "
-		position: absolute
-		top: 2000px
-		width: 2px
-		height: 2px
-		background: transparent
-		box-shadow: $shadows-medium
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 2px
+        height: 2px
+        background: transparent
+        box-shadow: $shadows-medium
 
 #bigsnow
-	width: 3px
-	height: 3px
-	background: transparent
-	box-shadow: $shadows-big
-	animation: snow 300s linear infinite
+    width: 3px
+    height: 3px
+    background: transparent
+    box-shadow: $shadows-big
+    animation: snow 300s linear infinite
 
-	&:after
-		content: " "
-		position: absolute
-		top: 2000px
-		width: 3px
-		height: 3px
-		background: transparent
-		box-shadow: $shadows-big
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 3px
+        height: 3px
+        background: transparent
+        box-shadow: $shadows-big
 
 .form__field
-	&:focus, &:valid
-		outline: 0
+    &:focus, &:valid
+        outline: 0
 
-		&+.form__label
-			color: #fff
-			transform: translateY(-1.5rem)
+        &+.form__label
+            color: #fff
+            transform: translateY(-1.5rem)
 
-.tippy-box[data-theme~='clean']
-	background-color: #ffffff00
-	color: #fff
-	text-transform: uppercase
-	letter-spacing: .1rem
-	font-weight: 400
-	font-size: .80rem
+[data-tooltip]
+    --arrow-size: 1px
+    position: relative
+    z-index: 10
+    background-color: #ffffff00
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: .1rem
+    font-weight: 400
+    &:before,
+    &:after
+        position: absolute
+        visibility: hidden
+        opacity: 0
+        left: 50%
+        bottom: calc(100% + var(--arrow-size))
+        pointer-events: none
+        transition: 0.2s
+        will-change: transform
+    &:before
+        content: attr(data-tooltip)
+        padding: 10px 18px
+        min-width: 50px
+        max-width: 300px
+        width: max-content
+        width: -moz-max-content
+        font-size: .8rem
+        background-color: #ffffff00
+        color: #fff
+        text-align: center
+        white-space: pre-wrap
+        transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5)
+    &:after
+        content: ''
+        transition-duration: 0s
+        transform-origin: top
+        transform: translateX(-50%) scaleY(0)
+    &:hover:before,
+    &:hover:after
+        visibility: visible
+        opacity: 1
+    &:hover
+        &:before
+            transition-delay: 0.3s
+            transform: translate(-50%, calc(0px - var(--arrow-size))) scale(1)
+        &:after
+            transition-delay: 0.5s
+            transition-duration: 0.2s
+            transform: translateX(-50%) scaleY(1)
+
+[data-tooltip-location="bottom"]
+    &:before,&:after
+        top: calc(100% + var(--arrow-size))
+        bottom: auto
+    &:before
+        transform: translate(-50%, var(--arrow-size)) scale(0.5)
+    &:hover
+        &:before
+            transform: translate(-50%, var(--arrow-size)) scale(1)
+    &:after
+        transform-origin: bottom
+
+.animate__fadeIn
+    animation-duration: 1s
+    animation-fill-mode: both
+    animation-name: fadeInUp
+
+@keyframes fadeInUp
+    from
+        opacity: 0
+        transform: translate3d(0, 100%, 0)
+
+    to
+        opacity: 1
+        transform: translate3d(0, 0, 0)
 
 @keyframes snow
-	from
-		transform: translateY(-2000px)
-	to
-		transform: translateY(2000px)
+    from
+        transform: translateY(-2000px)
+    to
+        transform: translateY(2000px)
 
 @keyframes show
-	100%
-		opacity: 100
+    100%
+        opacity: 100
 
 @keyframes blink
-	0%
-		opacity: 0
-	50%
-		opacity: 1
-	100%
-		opacity: 0
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        opacity: 0
 
 @keyframes scroll
-	0%
-		opacity: 0
+    0%
+        opacity: 0
 
-	50%
-		opacity: 1
-		transform: rotate(45deg) translate(5px, 5px)
+    50%
+        opacity: 1
+        transform: rotate(45deg) translate(5px, 5px)
 
-	100%
-		opacity: 0
+    100%
+        opacity: 0
 
 *::-webkit-scrollbar
-	width: 0.4em
+    width: 0.4em
 
 *::-webkit-scrollbar-track
-	background: #090A0F
+    background: #090A0F
 
 *::-webkit-scrollbar-thumb
-	background: #555
-	border-radius: 0rem
+    background: #555
+    border-radius: 0rem

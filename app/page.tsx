@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Suspense } from "react";
 import Snow from "@/components/common/Snow";
 import LangSelector from "@/components/hero/LangSelector";
