@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState, useRef } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
-import InputField from "./InputField";
-import Spinner from "../common/Spinner";
+import Spinner from "@/components/common/Spinner";
+import InputField from "@/components/contact/InputField";
 
-export default function ContactForm() {
+export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 	const [success, setSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string | null>(null);
+	const formRef = useRef<HTMLFormElement | null>(null);
 
 	const formik = useFormik({
 		initialValues: {
@@ -20,23 +21,30 @@ export default function ContactForm() {
 		},
 
 		validationSchema: Yup.object({
-			name: Yup.string().required("Please enter your name"),
-			email: Yup.string().email("Invalid email address").required("Please enter your email"),
-			subject: Yup.string().required("Please enter a subject"),
-			message: Yup.string().required("Please enter a message"),
+			name: Yup.string().required(dict.contact.messages.noName),
+			email: Yup.string()
+				.email(dict.contact.messages.invalidEmail)
+				.required(dict.contact.messages.noEmail),
+			subject: Yup.string().required(dict.contact.messages.noSubject),
+			message: Yup.string().required(dict.contact.messages.noMessage),
 		}),
 
-		onSubmit: async (values) => {
+		onSubmit: (values, { setSubmitting, resetForm }) => {
 			axios({
 				method: "POST",
 				url: "https://formbold.com/s/9Exr6",
 				data: values,
 			})
-				.then((r) => {
+				.then(() => {
 					setSuccess(true);
+					resetForm();
+					formRef.current && formRef.current.reset();
 				})
-				.catch((r) => {
-					setError("There seems to be a problem. Please try again.");
+				.catch(() => {
+					setError(dict.contact.messages.failed);
+				})
+				.finally(() => {
+					setSubmitting(false);
 				});
 		},
 
@@ -61,24 +69,25 @@ export default function ContactForm() {
 		<>
 			{success && (
 				<span className="w-full rounded-md p-4 text-center text-sm font-semibold text-[#80ff80]">
-					Your message has been submitted successfully.
+					{dict.contact.messages.success}
 				</span>
 			)}
 			{error && (
 				<span className="w-full rounded-md p-4 text-center text-sm font-semibold text-[#ff8080]">
-					Failed to submit your message. Try again later.
+					{dict.contact.messages.failed}
 				</span>
 			)}
 			<form
 				className="flex w-3/4 flex-col gap-4"
 				method="post"
+				ref={formRef}
 				onSubmit={formik.handleSubmit}
 				noValidate>
 				<div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8">
 					<InputField
 						type="text"
 						name="name"
-						label="Full name"
+						label={dict.contact.label.name}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						error={formik.touched.name ? formik.errors.name : undefined}
@@ -86,7 +95,7 @@ export default function ContactForm() {
 					<InputField
 						type="text"
 						name="email"
-						label="Email"
+						label={dict.contact.label.email}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						error={formik.touched.email ? formik.errors.email : undefined}
@@ -95,7 +104,7 @@ export default function ContactForm() {
 				<InputField
 					type="text"
 					name="subject"
-					label="Subject"
+					label={dict.contact.label.subject}
 					onChange={formik.handleChange}
 					onBlur={formik.handleBlur}
 					error={formik.touched.subject ? formik.errors.subject : undefined}
@@ -103,7 +112,7 @@ export default function ContactForm() {
 				<InputField
 					type="textarea"
 					name="message"
-					label="Message"
+					label={dict.contact.label.message}
 					onChange={formik.handleChange}
 					onBlur={formik.handleBlur}
 					error={formik.touched.message ? formik.errors.message : undefined}
@@ -111,9 +120,15 @@ export default function ContactForm() {
 				<div className="my-12 text-center md:my-8 md:text-end">
 					<button
 						type="submit"
-						className="rounded border border-white bg-transparent px-12 py-4 text-xl font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black md:px-6 md:py-3 md:text-base">
+						className={`inline-flex rounded border  bg-transparent px-12 py-4 text-xl font-bold uppercase  transition-all duration-300  md:px-6 md:py-3 md:text-base ${
+							!formik.isSubmitting
+								? " border-white text-white hover:bg-white hover:text-black"
+								: "cursor-default border-gray-400 text-gray-400"
+						}`}>
 						{formik.isSubmitting && <Spinner />}
-						{formik.isSubmitting ? "Submitting..." : "Submit"}
+						{formik.isSubmitting
+							? dict.contact.label.submitting
+							: dict.contact.label.submit}
 					</button>
 				</div>
 			</form>

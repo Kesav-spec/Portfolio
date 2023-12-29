@@ -1,62 +1,20 @@
-"use client";
-import "@/styles/splide.sass";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import Project from "./Project";
-import { projects } from "@/data/projects";
-import SplideArrows from "./SplideArrows";
-import Section from "../common/Section";
-import { useEffect, useMemo, useState } from "react";
+import Section from "@/components/common/Section";
+import ProjectSlides from "@/components/projects/ProjectSlides";
+import Project from "@/components/projects/Project";
+import { getDictionary } from "@/utils/dictionary";
+import { projectsEN, projectsJP } from "@/data/projects";
 
-export default function ProjectSection() {
-	const tips = useMemo(
-		() => [
-			"Hint: You can scroll down the description to read more.",
-			"Hint: You can swipe to navigate through the projects.",
-			"Hint: You can hover over the image to pause the slider",
-		],
-		[],
-	);
-
-	const [tipNum, setTipNum] = useState(1);
-	const [tip, setTip] = useState<string | null>(tips[0]);
-
-	useEffect(() => {
-		function rotateTips() {
-			setTip(tips[tipNum]);
-			setTipNum((tipNum + 1) % tips.length);
-		}
-
-		const interval = setInterval(rotateTips, 10000);
-		return () => clearInterval(interval);
-	}, [tipNum, tips]);
-
+export default async function ProjectSection({ lang }: Readonly<{ lang: Language }>) {
+	const projects = lang === "jp" ? projectsJP : projectsEN;
+	const dict = await getDictionary(lang);
 	return (
-		<Section title="projects">
-			<div className="mt-12 w-full">
-				<Splide
-					hasTrack={false}
-					options={{
-						type: "loop",
-						rewind: true,
-						gap: "1rem",
-						perPage: 1,
-						snap: true,
-						lazyLoad: "nearby",
-						preloadPages: 3,
-						pagination: true,
-						paginationDirection: "ltr",
-					}}>
-					<SplideArrows />
-					<SplideTrack>
-						{projects.map((prjt, idx) => (
-							<SplideSlide key={idx}>
-								<Project {...prjt} />
-							</SplideSlide>
-						))}
-					</SplideTrack>
-				</Splide>
-				<p className="relative mt-20 w-full text-center text-xs font-semibold">{tip}</p>
-			</div>
+		<Section title={dict.projects.title}>
+			<ProjectSlides
+				projects={projects.map((project, idx) => (
+					<Project key={idx} project={project} />
+				))}
+				hints={dict.projects.hints}
+			/>
 		</Section>
 	);
 }

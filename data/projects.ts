@@ -1,7 +1,8 @@
-export const projects: Project[] = [
+export const projectsEN: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Hoshi",
+		engTitle: "Hoshi",
 		imagesCount: 15,
 		tech: [
 			"Next.js",
@@ -27,6 +28,7 @@ export const projects: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Realest",
+		engTitle: "Realest",
 		imagesCount: 10,
 		tech: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Javascript", "Bootstrap"],
 		previewLink: "https://realest.up.railway.app/",
@@ -43,6 +45,7 @@ export const projects: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Handwritten Digit Recognition",
+		engTitle: "Handwritten Digit Recognition",
 		imagesCount: 3,
 		tech: ["Python", "Flask", "Tensorflow", "IBM Cloud", "HTML", "SCSS", "Javascript"],
 		previewLink: "https://digitrecognition-19lb.onrender.com",
@@ -60,6 +63,7 @@ export const projects: Project[] = [
 	{
 		type: "Personal Project",
 		title: "Forest Fire Detection",
+		engTitle: "Forest Fire Detection",
 		imagesCount: 3,
 		tech: ["Python", "Tensorflow", "OpenCV", "Twilio"],
 		previewLink: null,
@@ -70,6 +74,86 @@ export const projects: Project[] = [
 			"The system can detect forest fires with 93.3% accuracy.",
 			"Integrated Twilio messaging service into the system to send immediate alerts to the user when a fire is detected.",
 			"The system is highly scalable and can handle multiple cameras and videos to monitor large areas of forest in real-time.",
+		],
+	},
+];
+
+export const projectsJP: Project[] = [
+	{
+		type: "個人プロジェクト",
+		title: "ホシ",
+		engTitle: "Hoshi",
+		imagesCount: 15,
+		tech: [
+			"Next.js",
+			"React",
+			"Typescript",
+			"TailwindCSS",
+			"Python",
+			"FastAPI",
+			"MongoDB",
+			"Supabase",
+		],
+		previewLink: "https://hoshi-beta.vercel.app",
+		sourceLink: "https://github.com/nishanthrj/Hoshi",
+		description: [
+			"22,000以上のアニメと60,000以上のマンガタイトルの情報を提供する包括的なウェブプラットフォームを構築しました。",
+			"SBERTを使用した推薦システムを開発し、各タイトルの要約、ジャンル、およびタグを分析して類似のメディアをお勧めします。一般的なTF-IDFベースのシステムは約70〜90％の精度しか達成できませんが、このシステムは95.4％の精度を達成しています。",
+			"MyAnimeList、AniList、およびKitsuなどの信頼性のあるソースを利用してデータを収集し、ユーザーが各タイトルに関する正確で関連性のある情報を得ることを確認しました。",
+			"プラットフォームを複数の検索フィルター（ジャンル、タグ、ステータスなど）をサポートするように構築し、ユーザーが好みに合ったタイトルを簡単に見つけることができるようにしました。",
+			"洗練された、直感的であり、すべてのプラットフォームとデバイスで動作するように設計されたユーザーインターフェースを作成し、シームレスなユーザーエクスペリエンスを確保しました。",
+			"プラットフォームのパフォーマンスを最適化し、アクセシビリティ、パフォーマンス、SEO、およびベストプラクティスに関するLighthouseテストで90ポイント以上を達成しました。",
+		],
+	},
+	{
+		type: "個人プロジェクト",
+		title: "リアレスト",
+		engTitle: "Realest",
+		imagesCount: 10,
+		tech: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Javascript", "Bootstrap"],
+		previewLink: "https://realest.up.railway.app/",
+		sourceLink: "https://github.com/nishanthrj/Realest",
+		description: [
+			"顧客が好みに基づいて物件を検索できる不動産ウェブサイトを構築しました。",
+			"ユーザーがベッドルームの数、都市、州、価格などさまざまな基準に基づいて検索できる検索パネルを実装しました。",
+			"各物件に専用のページを作成し、物件の詳細と物件の写真を掲載しました。",
+			"ウェブサイトから不動産業者に直接お問い合わせを送信できるサポートを追加しました（現在は無効です）。",
+			"ユーザーダッシュボードを実装し、ユーザーがお問い合わせを管理できるようにしました。",
+			"ウェブサイトには管理者ダッシュボードも含まれており、管理者は簡単に新しい不動産業者や物件を追加できます。",
+		],
+	},
+	{
+		type: "個人プロジェクト",
+		title: "手書き数字認識",
+		engTitle: "Handwritten Digit Recognition",
+		imagesCount: 3,
+		tech: ["Python", "Flask", "Tensorflow", "IBM Cloud", "HTML", "SCSS", "Javascript"],
+		previewLink: "https://digitrecognition-19lb.onrender.com",
+		sourceLink: "https://github.com/nishanthrj/Handwritten-Digit-Recognition",
+		description: [
+			"畳み込みニューラルネットワークを使用して手書きの数字を分析および検出するウェブアプリケーションを作成しました。",
+			"ユーザーは手書きの数字の画像をアップロードして分析でき、数字の予測と他の数字の確率が表示されます。",
+			"手書き数字認識の広く使用されているベンチマークデータセットであるMNISTデータセットを使用しました。",
+			"モデルパフォーマンスを向上させ、過学習を減少させるために画像をモデルに供給する前に前処理を行いました。",
+			"モデルはトレーニング精度99.14％、テスト精度97.76％を達成しています。",
+			"モデルはIBM Cloudにデプロイされており、アプリケーションからIBMのAPIを介してアクセスできます。（現在、IBMの無料トライアルが終了したため、私は独自のサーバーでモデルを実行しています。）",
+			"シンプルで使いやすいインターフェースを提供し、技術的な経験の有無にかかわらず、誰でも簡単に使用できるウェブアプリケーションです。",
+		],
+	},
+	{
+		type: "個人プロジェクト",
+		title: "森林火災検知",
+		engTitle: "Forest Fire Detection",
+		imagesCount: 3,
+		tech: ["Python", "Tensorflow", "OpenCV", "Twilio"],
+		previewLink: null,
+		sourceLink: "https://github.com/nishanthrj/Forest-Fire-Detection",
+		description: [
+			"環境に広範囲な被害をもたらし、人命を危険にさらす可能性のある大規模な森林火災を予防するためのシステムを開発しました。",
+			"システムは畳み込みニューラルネットワークを使用してリアルタイムで火災を検出します。",
+			"システムは93.3％の精度で森林火災を検知できます。",
+			"Twilioメッセージングサービスをシステムに統合し、火災が検出されたときにユーザーに直ちにアラートを送信します。",
+			"システムは高いスケーラビリティを持ち、複数のカメラとビデオを処理してリアルタイムで大規模な森林を監視できます。",
 		],
 	},
 ];

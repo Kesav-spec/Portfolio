@@ -1,18 +1,33 @@
 import "@/styles/globals.sass";
-import { Overpass } from "next/font/google";
+
+import { Overpass, Noto_Sans_JP } from "next/font/google";
+import { getDictionary } from "@/utils/dictionary";
+import { cookies } from "next/headers";
 
 const overpass = Overpass({ subsets: ["latin"] });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
 
-export const metadata = {
-	title: "Nishanth R J | Portfolio",
-	description:
-		"Greetings, coding enthusiasts! Welcome to my personal portfolio. As a programmer fueled by coffee and coding memes, I've built numerous projects. Explore with me as I constantly experiment and learn new things. Let's code like there's no tomorrow!",
-};
+export async function generateMetadata() {
+	const cookieStore = cookies();
+	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
+	const dict = await getDictionary(lang);
+	return {
+		title: dict.main.title,
+		description: dict.main.description,
+	};
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+	const cookieStore = cookies();
+	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
+	const dict = await getDictionary(lang);
+	const font = lang === "jp" ? notoSansJP : overpass;
+
 	return (
-		<html lang="en" className="bg-[#090A0F] text-[10px] sm:text-[14px] 3xl:text-[20px]">
-			<body className={overpass.className}>{children}</body>
+		<html
+			lang={dict.main.lang}
+			className="bg-[#090A0F] text-[10px] sm:text-[14px] 3xl:text-[20px]">
+			<body className={font.className}>{children}</body>
 		</html>
 	);
 }

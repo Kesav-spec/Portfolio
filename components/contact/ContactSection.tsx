@@ -1,11 +1,14 @@
-import Section from "../common/Section";
-import ContactForm from "./ContactForm";
+import Section from "@/components/common/Section";
+import ContactForm from "@/components/contact/ContactForm";
+import { getDictionary } from "@/utils/dictionary";
 
-export default function ContactSection() {
+export default async function ContactSection({ lang }: Readonly<{ lang: Language }>) {
+	const dict = await getDictionary(lang);
+
 	return (
-		<Section title="contact">
+		<Section title={dict.contact.title}>
 			<div className="mt-4 flex w-full flex-col items-center">
-				<ContactForm />
+				<ContactForm dict={dict} />
 			</div>
 		</Section>
 	);

@@ -1,41 +1,48 @@
-import ScrollIndicator from "./ScrollIndicator";
-import SocialLink from "./SocialLink";
 import { SiGithub, SiLinkedin, SiWantedly } from "react-icons/si";
-import { FiMail, FiFileText } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
+import ScrollIndicator from "@/components/hero/ScrollIndicator";
+import SocialLink from "@/components/hero/SocialLink";
+import { getDictionary } from "@/utils/dictionary";
+import Name from "@/components/hero/Name";
 
-export default function HeroSection() {
+export default async function HeroSection({ lang }: Readonly<{ lang: Language }>) {
+	const dict = await getDictionary(lang);
+
 	return (
 		<section className="grid min-h-screen place-items-center">
 			<div className="flex flex-col items-center gap-2">
-				<div className="min-w-[28rem] text-5xl font-normal tracking-[6px] text-white sm:tracking-[10px]">
-					<span className="block w-[28rem] animate-[typing_2s_linear,_blink_.5s_step-end_infinite_alternate] overflow-hidden whitespace-nowrap border-r-[3px] text-[1em] uppercase text-[#ECECEC] 3xl:w-[26rem]">
-						Nishanth R J
-					</span>
+				<div className="font-normal tracking-[6px] text-white sm:tracking-[10px]">
+					<Name text={dict.hero.name} />
 				</div>
-				<div className="mt-12 flex w-full animate-[show_.5s_2.5s_ease-in-out_forwards] justify-evenly opacity-0">
-					<SocialLink text="E-Mail" link="mailto:nishanth.rj@proton.me" Icon={FiMail} />
+				<div
+					className={`mt-12 flex w-full animate-[show_1s_2.5s_ease-in-out_forwards] justify-evenly opacity-0`}>
 					<SocialLink
-						text="LinkedIn"
+						text={dict.hero.links.email}
+						link="mailto:nishanth.rj@proton.me"
+						Icon={FiMail}
+					/>
+					<SocialLink
+						text={dict.hero.links.linkedin}
 						link="https://www.linkedin.com/in/nishanth-rj"
 						Icon={SiLinkedin}
 					/>
 					<SocialLink
-						text="Github"
+						text={dict.hero.links.github}
 						link="https://github.com/nishanthrj"
 						Icon={SiGithub}
 					/>
 					<SocialLink
-						text="Wantedly"
+						text={dict.hero.links.wantedly}
 						link="https://www.wantedly.com/id/nishanthrj"
 						Icon={SiWantedly}
 					/>
-					<SocialLink
-						text="Resume"
-						link="/assets/hero/Nishanth R J - Resume.pdf"
+					{/* <SocialLink
+						text={dict.hero.links.resume}
+						link={dict.hero.resumePath}
 						Icon={FiFileText}
-					/>
+					/> */}
 				</div>
-				<ScrollIndicator />
+				<ScrollIndicator message={dict.hero.scrollMessage} />
 			</div>
 		</section>
 	);
