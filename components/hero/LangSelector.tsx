@@ -1,8 +1,4 @@
-import { useLangStore } from "@/app/store";
-
-export default function LangSelector() {
-	const lang = useLangStore.getState().lang;
-
+export default async function LangSelector({ lang }: Readonly<{ lang: Language }>) {
 	return (
 		<div className="absolute right-6 top-4 z-50 flex select-none gap-2 text-lg font-semibold text-white">
 			<a

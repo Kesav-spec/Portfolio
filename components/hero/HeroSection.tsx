@@ -3,11 +3,9 @@ import { FiMail } from "react-icons/fi";
 import ScrollIndicator from "@/components/hero/ScrollIndicator";
 import SocialLink from "@/components/hero/SocialLink";
 import { getDictionary } from "@/utils/dictionary";
-import { useLangStore } from "@/app/store";
 import Name from "@/components/hero/Name";
 
-export default async function HeroSection() {
-	const lang = useLangStore.getState().lang ?? "en";
+export default async function HeroSection({ lang }: Readonly<{ lang: Language }>) {
 	const dict = await getDictionary(lang);
 
 	return (

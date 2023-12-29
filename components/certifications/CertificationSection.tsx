@@ -1,11 +1,9 @@
 import Section from "@/components/common/Section";
 import CertificateCard from "@/components/certifications/CertificateCard";
-import { useLangStore } from "@/app/store";
 import { getDictionary } from "@/utils/dictionary";
 import { certificatesEN, certificatesJP } from "@/data/certificates";
 
-export default async function CertificationSection() {
-	const lang = useLangStore.getState().lang ?? "en";
+export default async function CertificationSection({ lang }: Readonly<{ lang: Language }>) {
 	const certificates = lang === "jp" ? certificatesJP : certificatesEN;
 	const dict = await getDictionary(lang);
 

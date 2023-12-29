@@ -1,10 +1,13 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { GoDotFill } from "react-icons/go";
 import { getDictionary } from "@/utils/dictionary";
-import { useLangStore } from "@/app/store";
 
-export default async function ProjectDetails(project: Project) {
-	const lang = useLangStore.getState().lang ?? "en";
+export default async function ProjectDetails(project: Readonly<Project>) {
+	const cookieStore = cookies();
+	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
 	const dict = await getDictionary(lang);
 
 	return (
@@ -14,7 +17,7 @@ export default async function ProjectDetails(project: Project) {
 			<p className="mt-2 text-sm font-bold">{project.tech.join(" • ")}</p>
 			<div className="mt-4 flex justify-center gap-4 xl:justify-start">
 				<Link
-					href={project.previewLink || "#"}
+					href={project.previewLink ?? "#"}
 					target="_blank"
 					prefetch={false}
 					className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold  no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
@@ -27,7 +30,7 @@ export default async function ProjectDetails(project: Project) {
 						: dict.projects.buttons.noLivePreview}
 				</Link>
 				<Link
-					href={project.sourceLink || "#"}
+					href={project.sourceLink ?? "#"}
 					target="_blank"
 					prefetch={false}
 					className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold text-white no-underline transition-colors duration-300 hover:bg-white hover:text-black ${

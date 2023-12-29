@@ -1,9 +1,13 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 import { redirect } from "next/navigation";
-import { useLangStore } from "@/app/store";
+import { cookies } from "next/headers";
 
 export async function GET() {
-	useLangStore.setState({ lang: "en" });
+	cookies().set({
+		name: "lang",
+		value: "en",
+		path: "/",
+	});
 	redirect("/");
 }
