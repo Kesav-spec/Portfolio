@@ -15,7 +15,7 @@ export default async function HeroSection({ lang }: Readonly<{ lang: Language }>
 					<Name text={dict.hero.name} />
 				</div>
 				<div
-					className={`mt-12 flex w-full animate-[show_1s_3.25s_ease-in-out_forwards] justify-evenly opacity-0`}>
+					className={`mt-12 flex w-full animate-[show_1s_2.5s_ease-in-out_forwards] justify-evenly opacity-0`}>
 					<SocialLink
 						text={dict.hero.links.email}
 						link="mailto:nishanth.rj@proton.me"
