@@ -12,7 +12,6 @@ import ContactSection from "@/components/contact/ContactSection";
 export default async function Home() {
 	const cookieStore = cookies();
 	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
-	console.log(lang);
 
 	return (
 		<main className="bg-[#090A0F]">
