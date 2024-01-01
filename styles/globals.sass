@@ -131,6 +131,8 @@ $shadows-big: multiple-box-shadow(100)
         transform-origin: bottom
 
 .animate__fadeIn
+    opacity: 0
+    transform: translate3d(0, 100%, 0)
     animation-duration: 1s
     animation-fill-mode: both
     animation-name: fadeInUp
@@ -151,7 +153,9 @@ $shadows-big: multiple-box-shadow(100)
         transform: translateY(2000px)
 
 @keyframes show
-    100%
+    from
+        opacity: 0
+    to
         opacity: 100
 
 @keyframes blink
