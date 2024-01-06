@@ -22,8 +22,6 @@ export default function ProjectImages({ projectName, imagesCount }: Readonly<Pro
 					autoplay: true,
 					interval: 3000,
 					perPage: 1,
-					lazyLoad: "nearby",
-					preloadPages: 3,
 					role: "region",
 				}}>
 				<SplideTrack>
@@ -36,6 +34,7 @@ export default function ProjectImages({ projectName, imagesCount }: Readonly<Pro
 								fill={true}
 								style={{ objectFit: "cover" }}
 								quality={80}
+								priority={true}
 								sizes="(max-width: 1280px) 80vw, 40vw"
 								alt={`${projectName} Screenshot ${idx + 1}`}
 								className="absolute"
