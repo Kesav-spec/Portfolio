@@ -38,7 +38,7 @@ export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 				.then(() => {
 					setSuccess(true);
 					resetForm();
-					formRef.current && formRef.current.reset();
+					formRef.current?.reset();
 				})
 				.catch(() => {
 					setError(dict.contact.messages.failed);

@@ -1,9 +1,9 @@
 export default function Snow() {
 	return (
 		<>
-			<div id="smolsnow"></div>
-			<div id="midsnow"></div>
-			<div id="bigsnow"></div>
+			<div id="small-particles"></div>
+			<div id="medium-particles"></div>
+			<div id="big-particles"></div>
 		</>
 	);
 }

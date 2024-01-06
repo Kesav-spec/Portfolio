@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import {
 	SiPython,
 	SiJavascript,
@@ -33,73 +34,42 @@ import {
 	SiTensorflow,
 } from "react-icons/si";
 
+const iconMap: Record<string, IconType> = {
+	python: SiPython,
+	javascript: SiJavascript,
+	docker: SiDocker,
+	nextjs: SiNextdotjs,
+	reactjs: SiReact,
+	nodejs: SiNodedotjs,
+	htmlcss: SiHtml5,
+	css: SiCss3,
+	sass: SiSass,
+	tailwindcss: SiTailwindcss,
+	postgresql: SiPostgresql,
+	mongodb: SiMongodb,
+	redis: SiRedis,
+	mysql: SiMysql,
+	supabase: SiSupabase,
+	django: SiDjango,
+	flask: SiFlask,
+	fastapi: SiFastapi,
+	typescript: SiTypescript,
+	git: SiGit,
+	ibmcloud: SiIbmcloud,
+	vercel: SiVercel,
+	photoshop: SiAdobephotoshop,
+	figma: SiFigma,
+	anaconda: SiAnaconda,
+	cloudflare: SiCloudflare,
+	jupyter: SiJupyter,
+	netlify: SiNetlify,
+	pandas: SiPandas,
+	pytorch: SiPytorch,
+	scikitlearn: SiScikitlearn,
+	tensorflow: SiTensorflow,
+};
+
 export function getIcon(skill: string) {
-	switch (skill.replace(/[^\w]/g, "").toLowerCase()) {
-		case "python":
-			return SiPython;
-		case "javascript":
-			return SiJavascript;
-		case "docker":
-			return SiDocker;
-		case "nextjs":
-			return SiNextdotjs;
-		case "reactjs":
-			return SiReact;
-		case "nodejs":
-			return SiNodedotjs;
-		case "htmlcss":
-			return SiHtml5;
-		case "css":
-			return SiCss3;
-		case "sass":
-			return SiSass;
-		case "tailwindcss":
-			return SiTailwindcss;
-		case "postgresql":
-			return SiPostgresql;
-		case "mongodb":
-			return SiMongodb;
-		case "redis":
-			return SiRedis;
-		case "mysql":
-			return SiMysql;
-		case "supabase":
-			return SiSupabase;
-		case "django":
-			return SiDjango;
-		case "flask":
-			return SiFlask;
-		case "fastapi":
-			return SiFastapi;
-		case "typescript":
-			return SiTypescript;
-		case "git":
-			return SiGit;
-		case "ibmcloud":
-			return SiIbmcloud;
-		case "vercel":
-			return SiVercel;
-		case "photoshop":
-			return SiAdobephotoshop;
-		case "figma":
-			return SiFigma;
-		case "anaconda":
-			return SiAnaconda;
-		case "cloudflare":
-			return SiCloudflare;
-		case "jupyter":
-			return SiJupyter;
-		case "netlify":
-			return SiNetlify;
-		case "pandas":
-			return SiPandas;
-		case "pytorch":
-			return SiPytorch;
-		case "scikitlearn":
-			return SiScikitlearn;
-		case "tensorflow":
-			return SiTensorflow;
-		default:
-			return null;
-	}
+	const skillName = skill.replace(/[^\w]/g, "").toLowerCase();
+	return iconMap[skillName] || null;
 }
