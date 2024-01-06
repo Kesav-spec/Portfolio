@@ -10,9 +10,9 @@ export default function CertificateCard(certificate: Readonly<Certificate>) {
 			<div className="flex h-min flex-shrink-0 flex-col items-center overflow-hidden">
 				<Image
 					src={`/assets/certificate/${certificate.image}`}
-					alt=""
-					width={250}
-					height={250}
+					alt={certificate.title}
+					width={200}
+					height={200}
 					quality={80}
 					style={{ objectFit: "cover" }}
 					className="w-3/4"
