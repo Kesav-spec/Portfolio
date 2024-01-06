@@ -1,11 +1,8 @@
 import "@/styles/globals.sass";
 
-import { Overpass, Noto_Sans_JP } from "next/font/google";
-import { getDictionary } from "@/utils/dictionary";
 import { cookies } from "next/headers";
-
-const overpass = Overpass({ subsets: ["latin"] });
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
+import { getDictionary } from "@/utils/dictionary";
+import { getFont } from "@/utils/fonts";
 
 export async function generateMetadata() {
 	const cookieStore = cookies();
@@ -21,7 +18,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 	const cookieStore = cookies();
 	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
 	const dict = await getDictionary(lang);
-	const font = lang === "jp" ? notoSansJP : overpass;
+	const font = getFont(lang);
 
 	return (
 		<html
