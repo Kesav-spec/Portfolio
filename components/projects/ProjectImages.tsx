@@ -35,9 +35,8 @@ export default function ProjectImages({ projectName, imagesCount }: ProjectImage
 								src={img}
 								fill={true}
 								style={{ objectFit: "cover" }}
-								loading="eager"
 								quality={80}
-								sizes="900px"
+								sizes="(max-width: 1280px) 80vw, 40vw"
 								alt={`${projectName} Screenshot ${idx + 1}`}
 								className="absolute"
 							/>
