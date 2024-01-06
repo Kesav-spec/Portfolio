@@ -9,7 +9,7 @@ export default async function HeroSection({ lang }: Readonly<{ lang: Language }>
 	const dict = await getDictionary(lang);
 
 	return (
-		<section className="grid min-h-screen place-items-center">
+		<section className="grid min-h-screen grid-rows-1 place-items-center">
 			<div className="flex flex-col items-center gap-2">
 				<div className="font-normal tracking-[6px] text-white sm:tracking-[10px]">
 					<Name text={dict.hero.name} />
@@ -42,8 +42,8 @@ export default async function HeroSection({ lang }: Readonly<{ lang: Language }>
 						Icon={FiFileText}
 					/> */}
 				</div>
-				<ScrollIndicator message={dict.hero.scrollMessage} />
 			</div>
+			<ScrollIndicator message={dict.hero.scrollMessage} />
 		</section>
 	);
 }
