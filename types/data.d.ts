@@ -1,6 +1,4 @@
-interface Skills {
-	[key: string]: string[];
-}
+type Skills = Record<string, string[]>;
 
 interface Journey {
 	id: number;

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
-export default function ProjectImages({ projectName, imagesCount }: ProjectImagesProps) {
+export default function ProjectImages({ projectName, imagesCount }: Readonly<ProjectImagesProps>) {
 	const images: string[] = [];
 
 	for (let i = 1; i <= imagesCount; i++) {

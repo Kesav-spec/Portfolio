@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function SocialLinks({ text, link, Icon }: SocialLinkProps) {
+export default function SocialLinks({ text, link, Icon }: Readonly<SocialLinkProps>) {
 	return (
 		<Link
 			className="text-3xl text-[#d5d5d5] decoration-transparent sm:text-2xl"

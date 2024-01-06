@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CertificateCard(certificate: Certificate) {
+export default function CertificateCard(certificate: Readonly<Certificate>) {
 	return (
 		<Link
 			className="flex flex-col gap-4 text-white no-underline"

@@ -1,4 +1,4 @@
-export default function SkillItem({ skill, Icon }: SkillItemProps) {
+export default function SkillItem({ skill, Icon }: Readonly<SkillItemProps>) {
 	return (
 		<div className="m-4 flex items-center gap-4 text-4xl">
 			<Icon className="flex h-min flex-shrink-0 flex-col items-center overflow-hidden" />

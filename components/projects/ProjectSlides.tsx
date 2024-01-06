@@ -5,7 +5,7 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import SplideArrows from "@/components/projects/SplideArrows";
 import Hints from "@/components/projects/Hints";
 
-export default function ProjectSlides({ projects, hints }: ProjectSlidesProps) {
+export default function ProjectSlides({ projects, hints }: Readonly<ProjectSlidesProps>) {
 	return (
 		<section className="mt-12 w-full">
 			<Splide

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-export default function Hints({ hints }: { hints: string[] }) {
+export default function Hints({ hints }: Readonly<{ hints: string[] }>) {
 	const tips = useMemo(() => hints, [hints]);
 
 	const [tipNum, setTipNum] = useState(1);

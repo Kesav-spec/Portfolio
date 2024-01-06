@@ -1,7 +1,7 @@
 import SkillItem from "@/components/skills/SkillItem";
 import { getIcon } from "@/utils/icons";
 
-export default function SkillGroup({ heading, skills, lang }: SkillGroupProps) {
+export default function SkillGroup({ heading, skills, lang }: Readonly<SkillGroupProps>) {
 	return (
 		<div className="flex flex-col items-center">
 			<div className={lang === "jp" ? "w-max" : "w-min"}>
