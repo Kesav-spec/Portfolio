@@ -4,7 +4,9 @@ import Link from "next/link";
 export default function CertificateCard(certificate: Readonly<Certificate>) {
 	return (
 		<Link
-			className="flex flex-col gap-4 text-white no-underline"
+			className={`flex flex-col gap-4 text-white no-underline ${
+				!certificate.link.length && "pointer-events-none"
+			}`}
 			href={certificate.link}
 			target="_blank">
 			<div className="flex h-min flex-shrink-0 flex-col items-center overflow-hidden">
