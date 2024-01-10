@@ -32,7 +32,7 @@ export default function ContactForm({ dict }: Readonly<{ dict: Dictionary }>) {
 		onSubmit: (values, { setSubmitting, resetForm }) => {
 			axios({
 				method: "POST",
-				url: "https://formbold.com/s/9Exr6",
+				url: "https://formbold.com/s/3V0ba",
 				data: values,
 			})
 				.then(() => {
