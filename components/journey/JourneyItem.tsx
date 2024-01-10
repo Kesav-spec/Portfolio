@@ -1,4 +1,5 @@
 import { FiCircle } from "react-icons/fi";
+import { GoDotFill } from "react-icons/go";
 
 export default function JourneyItem(journey: Readonly<Journey>) {
 	return (
@@ -10,8 +11,9 @@ export default function JourneyItem(journey: Readonly<Journey>) {
 				<p className="mt-1 text-sm font-bold">{journey.location}</p>
 				<ul className="ml-8 mt-2">
 					{journey.achievements.map((ach, idx) => (
-						<li key={idx} className="font-bold">
-							{ach}
+						<li key={idx} className="mb-2 flex items-center gap-1 normal-case">
+							<GoDotFill className="mb-1 text-sm" />
+							<p>{ach}</p>
 						</li>
 					))}
 				</ul>
