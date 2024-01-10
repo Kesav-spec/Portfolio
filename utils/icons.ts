@@ -32,6 +32,9 @@ import {
 	SiPytorch,
 	SiScikitlearn,
 	SiTensorflow,
+	SiPowerbi,
+	SiMicrosoftexcel,
+	SiTableau,
 } from "react-icons/si";
 
 const iconMap: Record<string, IconType> = {
@@ -41,7 +44,7 @@ const iconMap: Record<string, IconType> = {
 	nextjs: SiNextdotjs,
 	reactjs: SiReact,
 	nodejs: SiNodedotjs,
-	htmlcss: SiHtml5,
+	html: SiHtml5,
 	css: SiCss3,
 	sass: SiSass,
 	tailwindcss: SiTailwindcss,
@@ -67,6 +70,9 @@ const iconMap: Record<string, IconType> = {
 	pytorch: SiPytorch,
 	scikitlearn: SiScikitlearn,
 	tensorflow: SiTensorflow,
+	powerbi: SiPowerbi,
+	excel: SiMicrosoftexcel,
+	tableau: SiTableau,
 };
 
 export function getIcon(skill: string) {
