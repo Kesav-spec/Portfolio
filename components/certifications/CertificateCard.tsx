@@ -11,8 +11,8 @@ export default function CertificateCard(certificate: Readonly<Certificate>) {
 				<Image
 					src={`/assets/certificate/${certificate.image}`}
 					alt={certificate.title}
-					width={200}
-					height={200}
+					width={400}
+					height={300}
 					quality={80}
 					style={{ objectFit: "cover" }}
 					className="w-3/4"
