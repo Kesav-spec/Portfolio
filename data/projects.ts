@@ -64,7 +64,7 @@ export const projectsEN: Project[] = [
 			"Accessibility and Efficiency: The app aims to make exercise more accessible by employing a solely algorithmic approach, providing real-time and post-workout scoring without the need for substantial datasets.",
 			"Precision and Deployment: The algorithmic approach is more precise and effective than image classification methods, and the software is easily deployable in any cloud environment, accessible across various devices.",
 			"Calibration and Dataset-Free Operation: Users' cameras can be calibrated using values from the algorithmic approach, and the software operates without the need for extensive datasets, requiring only a reference workout video.",
-			"Performance Metrics: Achieving high accuracy, the software demonstrates impressive single-pose live-scoring at 92.67% and multipose live-scoring ranging from 95.11% to 95.98% across multiple repetitions when the workout is performed in good form",
+			"Performance Metrics: Achieving high accuracy, the software demonstrates impressive single-pose live-scoring at 92.67% and multipose live-scoring ranging from 95.12% to 95.98% across multiple repetitions when the workout is performed in good form",
 		],
 	},
 ];
