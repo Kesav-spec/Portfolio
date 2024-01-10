@@ -1,10 +1,10 @@
 import Section from "@/components/common/Section";
 import JourneyItem from "@/components/journey/JourneyItem";
 import { getDictionary } from "@/utils/dictionary";
-import { journeyEN, journeyJP } from "@/data/journey";
+import { journeyEN, journeyGA } from "@/data/journey";
 
 export default async function JourneySection({ lang }: Readonly<{ lang: Language }>) {
-	const journey = lang === "en" ? journeyEN : journeyJP;
+	const journey = lang === "en" ? journeyEN : journeyGA;
 	const dict = await getDictionary(lang);
 
 	return (

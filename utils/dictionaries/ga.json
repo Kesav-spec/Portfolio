@@ -1,0 +1,61 @@
+{
+	"main": {
+		"title": "Kesav S J | Réamhrá",
+		"lang": "ga",
+		"description": "Fáilte go dtí mo réamhrá. Feicfidh tú cuid de mo scileanna agus tionscnaimh a chruthaigh mé ar fud mo bhealaí. Déan teagmháil liom más mian leat breis eolais a fháil. Go raibh maith agat as do chuairt."
+	},
+	"hero": {
+		"name": "Kesav S J",
+		"links": {
+			"email": "Ríomhphost",
+			"linkedin": "LinkedIn",
+			"github": "Github",
+			"resume": "CV"
+		},
+		"resumePath": "/assets/hero/resume/Kesav S J - CV.pdf", 
+		"scrollMessage": "Scrollaigh síos"
+	},
+	"skills": {
+		"title": "scileanna"
+	},
+	"projects": {
+		"title": "tionscnaimh",
+		"buttons": {
+			"livePreview": "Réamhbhlaiseadh Beo",
+			"noLivePreview": "Gan Réamhbhlaiseadh Beo",
+			"sourceCode": "Cód Foinse",
+			"noSourceCode": "Cód Foinse Príobháideach"
+		},
+		"hints": [
+			"Leid: Is féidir leat scrolláil síos ar an tuairim a léamh níos mó.",
+			"Leid: Is féidir leat swipe a úsáid chun dul thart trí na tionscnaimh.",
+			"Leid: Is féidir leat suaitheadh os cionn an íomhá chun an sleamhnán a chur ar stop."
+		]
+	},
+	"certifications": {
+		"title": "aitheantais"
+	},
+	"journey": {
+		"title": "turas"
+	},
+	"contact": {
+		"title": "teagmháil",
+		"messages": {
+			"noName": "Cuir isteach do ainm, le do thoil",
+			"noEmail": "Cuir isteach do sheoladh Ríomhphoist, le do thoil",
+			"invalidEmail": "Seoladh Ríomhphoist neamhbhailí",
+			"noMessage": "Cuir isteach teachtaireacht, le do thoil",
+			"noSubject": "Cuir isteach ábhar, le do thoil",
+			"success": "Tá do theachtaireacht curtha isteach go rathúil.",
+			"failed": "Bhuaileadh sé le do theachtaireacht a chur isteach. Triail arís níos déanaí."
+		},
+		"label": {
+			"name": "Ainm iomlán",
+			"email": "Ríomhphost",
+			"subject": "Ábhar",
+			"message": "Teachtaireacht",
+			"submitting": "Ag cur isteach...",
+			"submit": "Cuir isteach"
+		}
+	}
+}

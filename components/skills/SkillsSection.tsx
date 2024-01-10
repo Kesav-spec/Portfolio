@@ -1,10 +1,10 @@
 import Section from "@/components/common/Section";
 import SkillGroup from "@/components/skills/SkillGroup";
 import { getDictionary } from "@/utils/dictionary";
-import { skillsEN, skillsJP } from "@/data/skills";
+import { skillsEN, skillsGA } from "@/data/skills";
 
 export default async function SkillsSection({ lang }: Readonly<{ lang: Language }>) {
-	const skills = lang === "jp" ? skillsJP : skillsEN;
+	const skills = lang === "ga" ? skillsGA : skillsEN;
 	const dict = await getDictionary(lang);
 
 	return (

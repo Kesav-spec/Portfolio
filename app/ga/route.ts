@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 export async function GET() {
 	cookies().set({
 		name: "lang",
-		value: "jp",
+		value: "ga",
 		path: "/",
 	});
 	redirect("/");

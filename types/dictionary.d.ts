@@ -10,7 +10,6 @@ interface HeroSection {
 		email: string;
 		linkedin: string;
 		github: string;
-		wantedly: string;
 		resume: string;
 	};
 	resumePath: string;
@@ -71,5 +70,5 @@ interface Dictionary {
 	contact: ContactSection;
 }
 
-type Language = "en" | "jp";
+type Language = "en" |  "ga";
 type DictionaryFunction = (lang: Language) => Promise<Dictionary>;
