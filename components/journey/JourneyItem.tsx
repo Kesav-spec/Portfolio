@@ -11,8 +11,8 @@ export default function JourneyItem(journey: Readonly<Journey>) {
 				<p className="mt-1 text-sm font-bold">{journey.location}</p>
 				<ul className="ml-8 mt-2">
 					{journey.achievements.map((ach, idx) => (
-						<li key={idx} className="mb-2 flex items-center gap-1 normal-case">
-							<GoDotFill className="mb-1 text-sm" />
+						<li key={idx} className="mb-2 grid grid-cols-[1rem_auto] gap-1 normal-case">
+							<GoDotFill className="mt-1 text-sm" />
 							<p>{ach}</p>
 						</li>
 					))}
