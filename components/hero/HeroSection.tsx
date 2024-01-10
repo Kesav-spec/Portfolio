@@ -18,17 +18,17 @@ export default async function HeroSection({ lang }: Readonly<{ lang: Language }>
 					className={`mt-12 flex w-full animate-[show_1s_2.5s_ease-in-out_forwards] justify-evenly opacity-0`}>
 					<SocialLink
 						text={dict.hero.links.email}
-						link="mailto:nishanth.rj@proton.me"
+						link="mailto:kesavsj03@gmail.com"
 						Icon={FiMail}
 					/>
 					<SocialLink
 						text={dict.hero.links.linkedin}
-						link="https://www.linkedin.com/in/nishanth-rj"
+						link="https://www.linkedin.com/in/kesav-sj/"
 						Icon={SiLinkedin}
 					/>
 					<SocialLink
 						text={dict.hero.links.github}
-						link="https://github.com/nishanthrj"
+						link="https://github.com/Kesav-spec"
 						Icon={SiGithub}
 					/>
 					<SocialLink
