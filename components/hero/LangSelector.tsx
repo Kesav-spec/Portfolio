@@ -12,13 +12,13 @@ export default async function LangSelector({ lang }: Readonly<{ lang: Language }
 			</a>
 			<span className="text-gray-400">/</span>
 			<a
-				href="/jp"
+				href="/ga"
 				className={
-					lang === "jp"
+					lang === "ga"
 						? "pointer-events-none cursor-default text-white underline underline-offset-2"
 						: "text-gray-400"
 				}>
-				JP
+				GA
 			</a>
 		</div>
 	);

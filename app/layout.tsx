@@ -2,7 +2,9 @@ import "@/styles/globals.sass";
 
 import { cookies } from "next/headers";
 import { getDictionary } from "@/utils/dictionary";
-import { getFont } from "@/utils/fonts";
+import { Overpass } from "next/font/google";
+
+const font = Overpass({ subsets: ["latin"] });
 
 export async function generateMetadata() {
 	const cookieStore = cookies();
@@ -18,7 +20,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 	const cookieStore = cookies();
 	const lang = (cookieStore.get("lang")?.value as Language) ?? "en";
 	const dict = await getDictionary(lang);
-	const font = getFont(lang);
 
 	return (
 		<html

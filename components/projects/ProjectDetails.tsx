@@ -16,19 +16,21 @@ export default async function ProjectDetails(project: Readonly<Project>) {
 			<h1 className="mt-2 text-3xl font-bold">{project.title}</h1>
 			<p className="mt-2 text-sm font-bold">{project.tech.join(" • ")}</p>
 			<div className="mt-4 flex justify-center gap-4 xl:justify-start">
-				<Link
-					href={project.previewLink ?? "#"}
-					target="_blank"
-					prefetch={false}
-					className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold  no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
-						project.previewLink
-							? "border-white text-white"
-							: "pointer-events-none border-[#aaa]  text-[#aaa]"
-					}`}>
-					{project.previewLink
-						? dict.projects.buttons.livePreview
-						: dict.projects.buttons.noLivePreview}
-				</Link>
+				{project.previewLink && (
+					<Link
+						href={project.previewLink ?? "#"}
+						target="_blank"
+						prefetch={false}
+						className={`rounded-[5px] border  bg-transparent p-[0.75em] text-sm font-bold  no-underline transition-colors duration-300 hover:bg-white hover:text-black ${
+							project.previewLink
+								? "border-white text-white"
+								: "pointer-events-none border-[#aaa]  text-[#aaa]"
+						}`}>
+						{project.previewLink
+							? dict.projects.buttons.livePreview
+							: dict.projects.buttons.noLivePreview}
+					</Link>
+				)}
 				<Link
 					href={project.sourceLink ?? "#"}
 					target="_blank"

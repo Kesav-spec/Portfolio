@@ -1,5 +1,5 @@
-import { SiGithub, SiLinkedin, SiWantedly } from "react-icons/si";
-import { FiMail } from "react-icons/fi";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FiMail, FiFileText } from "react-icons/fi";
 import ScrollIndicator from "@/components/hero/ScrollIndicator";
 import SocialLink from "@/components/hero/SocialLink";
 import { getDictionary } from "@/utils/dictionary";
@@ -18,29 +18,24 @@ export default async function HeroSection({ lang }: Readonly<{ lang: Language }>
 					className={`mt-12 flex w-full animate-[show_1s_2.5s_ease-in-out_forwards] justify-evenly opacity-0`}>
 					<SocialLink
 						text={dict.hero.links.email}
-						link="mailto:nishanth.rj@proton.me"
+						link="mailto:kesavsj03@gmail.com"
 						Icon={FiMail}
 					/>
 					<SocialLink
 						text={dict.hero.links.linkedin}
-						link="https://www.linkedin.com/in/nishanth-rj"
+						link="https://www.linkedin.com/in/kesav-sj/"
 						Icon={SiLinkedin}
 					/>
 					<SocialLink
 						text={dict.hero.links.github}
-						link="https://github.com/nishanthrj"
+						link="https://github.com/Kesav-spec"
 						Icon={SiGithub}
 					/>
 					<SocialLink
-						text={dict.hero.links.wantedly}
-						link="https://www.wantedly.com/id/nishanthrj"
-						Icon={SiWantedly}
-					/>
-					{/* <SocialLink
 						text={dict.hero.links.resume}
 						link={dict.hero.resumePath}
 						Icon={FiFileText}
-					/> */}
+					/>
 				</div>
 			</div>
 			<ScrollIndicator message={dict.hero.scrollMessage} />
