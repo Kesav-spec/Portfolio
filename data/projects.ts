@@ -33,6 +33,21 @@ export const projectsEN: Project[] = [
 	},
 	{
 		type: "Personal Project",
+		title: "PL Match Prediction",
+		engTitle: "Predict_Epl_Winners",
+		imagesCount: 3,
+		tech: ["RandomForest", "Webscraping", "Numpy", "Pandas", "Beautifulsoup"],
+		previewLink: null,
+		sourceLink: "https://github.com/Kesav-spec/PL-Match-Prediction",
+		description: [
+			"Utilized web scraping techniques with BeautifulSoup to extract relevant Premier League match data, including results and shooting statistics, from the FBref website.",
+			"Employed Pandas and NumPy for data preprocessing, ensuring the extracted information is structured and ready for machine learning.",
+			"Constructed a predictive model using the Random Forest algorithm, a popular classification algorithm in machine learning.",
+			"Improved the accuracy and precision of the model by incorporating additional features derived from rolling averages.",
+		],
+	},
+	{
+		type: "Personal Project",
 		title: "Dubin Airbnb Analysis",
 		engTitle: "Dublin_Airbnb",
 		imagesCount: 5,
