@@ -1,7 +1,7 @@
 export const projectsEN: Project[] = [
 	
 	{
-		type: "Group Project",
+		type: "Academic Project",
 		title: "BINGO!",
 		engTitle: "BINGO",
 		imagesCount: 3,
@@ -16,7 +16,7 @@ export const projectsEN: Project[] = [
 		],
 	},
 	{
-		type: "Group project",
+		type: "Academic project",
 		title: "Homicide Analysis with Excel",
 		engTitle: "Homicide_Analysis",
 		imagesCount: 4,
@@ -60,6 +60,21 @@ export const projectsEN: Project[] = [
 			"Visualized the geographical distribution of all Airbnb listings in Dublin.",
 			"Explored host acceptance rates on Airbnb, analyzing patterns across different neighborhoods.",
 			"Computed the average price for different property types in the dataset.",
+		],
+	},
+	{
+		type: "Academic Project",
+		title: "Energy Consumption Forecasting",
+		engTitle: "Energy_Forecasting",
+		imagesCount: 6,
+		tech: ["XGBoost", "Cross Validation", "Grid Search"],
+		previewLink: null,
+		sourceLink: "https://github.com/Kesav-spec/Energy-Forecasting",
+		description: [
+			"Utilized XGBoost, a powerful gradient boosting algorithm, for predictive analysis to capture complex nonlinear relationships between features and the target variable, resulting in more accurate forecasts of energy consumption.",
+			"Enhanced model performance through cross-validation (CV) and grid search, ensuring generalization to unseen data and preventing overfitting",
+			"Outperformed other models in terms of Mean Absolute Percentage Error (7.34), providing more accurate forecasts of energy consumption",
+			
 		],
 	},
 	{
@@ -134,6 +149,21 @@ export const projectsGA: Project[] = [
 			"Recognized changing dynamics in interpersonal violence, recommended ongoing monitoring.",
 			"Tested for trends in Homicides(1990-2009, 2010-2019).",
 			"Concluded with 95% confidence that global homicides remained constant.",
+		],
+	},
+	{
+		type: "Academic Project",
+		title: "Energy Consumption Forecasting",
+		engTitle: "Energy_Forecasting",
+		imagesCount: 6,
+		tech: ["XGBoost", "Cross Validation", "Grid Search"],
+		previewLink: null,
+		sourceLink: "https://github.com/Kesav-spec/Energy-Forecasting",
+		description: [
+			"Utilized XGBoost, a powerful gradient boosting algorithm, for predictive analysis to capture complex nonlinear relationships between features and the target variable, resulting in more accurate forecasts of energy consumption.",
+			"Enhanced model performance through cross-validation (CV) and grid search, ensuring generalization to unseen data and preventing overfitting",
+			"Outperformed other models in terms of Mean Absolute Percentage Error (7.34), providing more accurate forecasts of energy consumption",
+			
 		],
 	},
 	{
