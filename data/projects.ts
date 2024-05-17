@@ -47,6 +47,21 @@ export const projectsEN: Project[] = [
 		],
 	},
 	{
+		type: "Academic Project",
+		title: "Air-Traffic Decision Support System",
+		engTitle: "DSS",
+		imagesCount: 3,
+		tech: ["Pandas", "NumPy", "Tableau"],
+		previewLink: null,
+		sourceLink: "https://public.tableau.com/app/profile/kesav.s.j8420/viz/MIS41040Team39_17133931107820/Dashboard3?publish=yes",
+		description: [
+			"Developed a Tableau-based DSS to analyse the impact of COVID-19 on global air travel, utilized Pandas and NumPy for data cleaning",
+			"Enhanced dataset with airline and airport information, reduced from 25M to 9M records, and created interactive dashboards for user-friendly exploration.",
+			"Demonstrated proficiency in data analysis, cleaning, and visualization, applying 16 laws of UX design principles for an intuitive interface.",
+			
+		],
+	},
+	{
 		type: "Personal Project",
 		title: "Dubin Airbnb Analysis",
 		engTitle: "Dublin_Airbnb",
@@ -118,6 +133,21 @@ export const projectsGA: Project[] = [
 			"Precision and Deployment: The algorithmic approach is more precise and effective than image classification methods, and the software is easily deployable in any cloud environment, accessible across various devices.",
 			"Calibration and Dataset-Free Operation: Users' cameras can be calibrated using values from the algorithmic approach, and the software operates without the need for extensive datasets, requiring only a reference workout video.",
 			"Performance Metrics: Achieving high accuracy, the software demonstrates impressive single-pose live-scoring at 92.67% and multipose live-scoring ranging from 95.12% to 95.98% across multiple repetitions when the workout is performed in good form",
+		],
+	},
+	{
+		type: "Academic Project",
+		title: "Air-Traffic Decision Support System",
+		engTitle: "DSS",
+		imagesCount: 3,
+		tech: ["Pandas", "NumPy", "Tableau"],
+		previewLink: null,
+		sourceLink: "https://public.tableau.com/app/profile/kesav.s.j8420/viz/MIS41040Team39_17133931107820/Dashboard3?publish=yes",
+		description: [
+			"Developed a Tableau-based DSS to analyse the impact of COVID-19 on global air travel, utilized Pandas and NumPy for data cleaning",
+			"Enhanced dataset with airline and airport information, reduced from 25M to 9M records, and created interactive dashboards for user-friendly exploration.",
+			"Demonstrated proficiency in data analysis, cleaning, and visualization, applying 16 laws of UX design principles for an intuitive interface.",
+			
 		],
 	},
 	{
