@@ -16,6 +16,21 @@ export const projectsEN: Project[] = [
 		],
 	},
 	{
+		type: "Academic Project",
+		title: "Player Appraisal - Rasmus Hojlund",
+		engTitle: "Player_Appraisal",
+		imagesCount: 6,
+		tech: ["Tableau", "Data Preprocessing", "Data Analysis"],
+		previewLink: null,
+		sourceLink: "https://public.tableau.com/app/profile/kesav.s.j8420/viz/PlayerAppraisalRasmusHojlund/Story1?publish=yes",
+		description: [
+			"Conducted Player appraisal for Rasmus Hojlund",
+			"Compared existing metrics with existing strikers, under 21 forwards, premier league strikers, successful strikers of this generation.",
+			"Created own metrics to appraise Hojlund such as Goals per pass received, Gouls per number of touches taken.",
+			"Assessed area of improvement for the player",
+		],
+	}
+	{
 		type: "Academic project",
 		title: "Homicide Analysis with Excel",
 		engTitle: "Homicide_Analysis",
@@ -135,6 +150,7 @@ export const projectsGA: Project[] = [
 			"Performance Metrics: Achieving high accuracy, the software demonstrates impressive single-pose live-scoring at 92.67% and multipose live-scoring ranging from 95.12% to 95.98% across multiple repetitions when the workout is performed in good form",
 		],
 	},
+	
 	{
 		type: "Academic Project",
 		title: "Air-Traffic Decision Support System",
@@ -212,4 +228,19 @@ export const projectsGA: Project[] = [
 			"Computed the average price for different property types in the dataset.",
 		],
 	},
+	{
+		type: "Academic Project",
+		title: "Player Appraisal - Rasmus Hojlund",
+		engTitle: "Player_Appraisal",
+		imagesCount: 6,
+		tech: ["Tableau", "Data Preprocessing", "Data Analysis"],
+		previewLink: null,
+		sourceLink: "https://public.tableau.com/app/profile/kesav.s.j8420/viz/PlayerAppraisalRasmusHojlund/Story1?publish=yes",
+		description: [
+			"Conducted Player appraisal for Rasmus Hojlund",
+			"Compared existing metrics with existing strikers, under 21 forwards, premier league strikers, successful strikers of this generation.",
+			"Created own metrics to appraise Hojlund such as Goals per pass received, Gouls per number of touches taken.",
+			"Assessed area of improvement for the player",
+		],
+	}
 ];
