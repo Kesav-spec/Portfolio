@@ -30,7 +30,7 @@ export const projectsEN: Project[] = [
 			"Assessed area of improvement for the player",
 		],
 	}
-	{
+	,{
 		type: "Academic project",
 		title: "Homicide Analysis with Excel",
 		engTitle: "Homicide_Analysis",
